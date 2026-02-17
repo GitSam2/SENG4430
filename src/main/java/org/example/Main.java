@@ -11,7 +11,7 @@ import java.util.List;
 public class Main {
     static void main(String[] args) {
         Path testInputPath = Path.of("src");        // test path
-//        Path path = Path.of(args[0]);       // how its supposed to be or smt similar
+//        Path path = Path.of(args[0]);       // how It's supposed to be or smt similar
         JavaParserProvider.initialization(testInputPath);
     }
 
@@ -22,7 +22,7 @@ public class Main {
         resultList.forEach(result -> {
             if (result.isSuccessful() && result.getResult().isPresent()) {
                 CompilationUnit cU = result.getResult().get();
-                System.out.println(cU.);
+                System.out.println(cU);
             }
         });
 
