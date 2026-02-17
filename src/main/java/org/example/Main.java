@@ -6,7 +6,6 @@ import com.github.javaparser.utils.SourceRoot;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -23,10 +22,10 @@ public class Main {
         resultList.forEach(result -> {
             if (result.isSuccessful() && result.getResult().isPresent()) {
                 CompilationUnit cU = result.getResult().get();
-                System.out.println(cU.toString());
+                System.out.println(cU.);
             }
         });
-        
+
         // In order to get the data, check the result first, then use result.get() to get the compilation unit which is the parsed java file
         // All the additional comments so you can understand and utilize the input from the repo, I will delete later.
         return parser.tryToParse();
