@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22982cdb-3285-46dd-90f5-f459577e8812" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/ProjectParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/singleClassExample/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/MetricContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/MetricContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DitMetricTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ditTest/DitMetricTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitMetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitMetric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitResult.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +37,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.DitMetricTest.objectHasDepth0.executor": "Run",
+    "JUnit.DitMetricTest.singleClassExample.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",

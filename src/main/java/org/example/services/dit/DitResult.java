@@ -1,49 +1,29 @@
 package org.example.services.dit;
 
+import java.util.Map;
+
+/*
+ * This class is uses for holding the result of the DIT metric
+ * You can use it by calling its public methods to get results
+ * e.g. result.getDIT() to get the DIT
+ */
 public class DitResult {
     // class attributes
-    int rank;
-    int DIT;
-    String className;
-    String notes;
+    int noAnalysedClasses;
+    int noExcludedClasses;
+    int maxDIT;
+    int meanDIT;
+    int noWarnThresholds;
+    int noFailThresholds;
+    boolean result;
+    Map<String, Integer> classes;
 
     // constructors
-    public DitResult(int rank, int DIT, String className, String notes) {
-        this.rank = rank;
-        this.DIT = DIT;
-        this.className = className;
-    }
-
-    // getters and setters
-    public int getRank() {
-        return rank;
-    }
-
-    public void setRank(int rank) {
-        this.rank = rank;
+    public DitResult(Map<String, Integer> classes) {
+        this.classes = classes;
     }
 
     public int getDIT() {
-        return DIT;
-    }
-
-    public void setDIT(int DIT) {
-        this.DIT = DIT;
-    }
-
-    public String getClassName() {
-        return className;
-    }
-
-    public void setClassName(String className) {
-        this.className = className;
-    }
-
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
+        return 0;
     }
 }
