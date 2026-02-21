@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22982cdb-3285-46dd-90f5-f459577e8812" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/DitResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/Metric.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/MetricContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/DitMetricTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/ProjectParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/singleClassExample/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/MetricContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/MetricContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DitMetricTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ditTest/DitMetricTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +38,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.DitMetricTest.objectHasDepth0.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -53,7 +52,7 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.DitMetricTest.objectHasDepth0">
+  <component name="RunManager" selected="JUnit.DitMetricTest.singleClassExample">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="src" />
@@ -69,9 +68,25 @@
     </configuration>
     <configuration name="DitMetricTest.objectHasDepth0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="src" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DitMetricTest" />
+      <option name="PACKAGE_NAME" value="ditTest" />
+      <option name="MAIN_CLASS_NAME" value="ditTest.DitMetricTest" />
       <option name="METHOD_NAME" value="objectHasDepth0" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DitMetricTest.singleClassExample" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="src" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ditTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ditTest" />
+      <option name="MAIN_CLASS_NAME" value="ditTest.DitMetricTest" />
+      <option name="METHOD_NAME" value="singleClassExample" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -79,6 +94,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DitMetricTest.singleClassExample" />
         <item itemvalue="JUnit.DitMetricTest.objectHasDepth0" />
         <item itemvalue="Application.Main" />
       </list>
