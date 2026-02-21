@@ -9,10 +9,15 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class Main {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Path testInputPath = Path.of("src");        // test path
 //        Path path = Path.of(args[0]);       // how It's supposed to be or smt similar
         JavaParserProvider.initialization(testInputPath);
+        try {
+            new Main().parserProject(testInputPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // Example of how to use the parser
@@ -28,6 +33,6 @@ public class Main {
 
         // In order to get the data, check the result first, then use result.get() to get the compilation unit which is the parsed java file
         // All the additional comments so you can understand and utilize the input from the repo, I will delete later.
-        return parser.tryToParse();
+        return resultList;
     }
 }
