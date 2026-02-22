@@ -4,20 +4,29 @@ import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.utils.SourceRoot;
 
+import org.eclipse.aether.RepositorySystem;
+import org.eclipse.aether.RepositorySystemSession;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
-        Path testInputPath = Path.of("src");        // test path
-//        Path path = Path.of(args[0]);       // how It's supposed to be or smt similar
-        JavaParserProvider.initialization(testInputPath);
-        try {
-            List<ParseResult<CompilationUnit>> parseResultList = parserProject(testInputPath);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    static void main(String[] args) throws Exception {
+//        Path testInputPath = Path.of("src");        // test path
+////        Path path = Path.of(args[0]);       // how It's supposed to be or smt similar
+//        JavaParserProvider.initialization(testInputPath);
+        RepositorySystem system = MavenBootstrap.newRepositorySystem();
+        RepositorySystemSession session = MavenBootstrap.newSession(system);
+
+        DependencyTreeResolver resolver =
+                new DependencyTreeResolver(system, session);
+
+        List<DependencyTree> trees =
+                resolver.resolvePom("pom.xml");
+
+        trees.forEach(TreePrinter::print);
     }
 
     // Example of how to use the parser
