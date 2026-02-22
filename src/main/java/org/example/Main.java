@@ -4,6 +4,10 @@ import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.utils.SourceRoot;
 
+import org.eclipse.aether.RepositorySystem;
+import org.eclipse.aether.RepositorySystemSession;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
