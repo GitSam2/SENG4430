@@ -20,6 +20,7 @@
 
     <dependencies>
         <!-- Java Parser -->
+        <!-- Java Parser -->
         <dependency>
             <groupId>com.github.javaparser</groupId>
             <artifactId>javaparser-symbol-solver-core</artifactId>
@@ -105,13 +106,16 @@
         </dependency>
     </dependencies>
 
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/OWNER/REPO</url>
-        </repository>
-    </distributionManagement>
+    <build>
+        <plugins>
+            <!-- Makes sure tests fire on build -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.4</version>
+            </plugin>
+        </plugins>
+    </build>
 
     <distributionManagement>
         <repository>
