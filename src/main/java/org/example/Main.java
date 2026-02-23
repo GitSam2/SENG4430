@@ -7,7 +7,6 @@ import com.github.javaparser.utils.SourceRoot;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
@@ -17,16 +16,18 @@ public class Main {
 //        Path testInputPath = Path.of("src");        // test path
 ////        Path path = Path.of(args[0]);       // how It's supposed to be or smt similar
 //        JavaParserProvider.initialization(testInputPath);
-        RepositorySystem system = MavenBootstrap.newRepositorySystem();
-        RepositorySystemSession session = MavenBootstrap.newSession(system);
+        // RepositorySystem system = MavenBootstrap.newRepositorySystem();
+        // RepositorySystemSession session = MavenBootstrap.newSession(system);
 
-        DependencyTreeResolver resolver =
-                new DependencyTreeResolver(system, session);
+        // DependencyTreeResolver resolver =
+        //         new DependencyTreeResolver(system, session);
 
-        List<DependencyTree> trees =
-                resolver.resolvePom("pom.xml");
+        // List<DependencyTree> trees =
+        //         resolver.resolvePom("pom.xml");
 
-        trees.forEach(TreePrinter::print);
+        // trees.forEach(TreePrinter::print);
+        VersionMetadataService version = new VersionMetadataService();
+        IO.println(version.fetchLatestVersion("org.junit.jupiter", "junit-jupiter"));
     }
 
     // Example of how to use the parser
