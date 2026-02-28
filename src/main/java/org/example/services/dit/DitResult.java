@@ -29,7 +29,6 @@ public class DitResult {
         if (classes.isEmpty()) {
             this.maxDIT = 0;
             this.meanDIT = 0;
-            this.result = true; // nothing to fail on
             return;
         }
 

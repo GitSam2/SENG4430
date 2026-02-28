@@ -1,7 +1,6 @@
 package org.example.services.dit;
 
 import com.github.javaparser.ast.CompilationUnit;
-import org.example.services.InheritanceCollector;
 import org.example.services.Metric;
 import org.example.services.MetricContext;
 

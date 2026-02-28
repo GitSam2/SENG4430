@@ -1,4 +1,4 @@
-package org.example.services;
+package org.example.services.dit;
 
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
