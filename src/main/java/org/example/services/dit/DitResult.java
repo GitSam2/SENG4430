@@ -12,18 +12,38 @@ public class DitResult {
     int noAnalysedClasses;
     int noExcludedClasses;
     int maxDIT;
-    int meanDIT;
+    double meanDIT;
     int noWarnThresholds;
     int noFailThresholds;
     boolean result;
-    Map<String, Integer> classes;
+    Map<String, Integer> classes; // class name, DIT
 
     // constructors
     public DitResult(Map<String, Integer> classes) {
         this.classes = classes;
+        recomputeSummary();
     }
 
-    public int getDIT() {
-        return 0;
+    private void recomputeSummary() {
+        // early catch for unnecessary calculations
+        if (classes.isEmpty()) {
+            this.maxDIT = 0;
+            this.meanDIT = 0;
+            this.result = true; // nothing to fail on
+            return;
+        }
+
+        double sum = 0;
+        int max = Integer.MIN_VALUE;
+        for (int classDit : classes.values()) {
+            sum += classDit;
+            if (classDit > max) max = classDit; // get the max DIT
+        }
+        this.maxDIT = max;
+        this.meanDIT = sum / classes.size(); // calculate the average
+    }
+
+    public double getMeanDIT() {
+        return meanDIT;
     }
 }

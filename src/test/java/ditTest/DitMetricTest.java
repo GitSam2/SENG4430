@@ -27,13 +27,13 @@ class DitMetricTest {
         Path testInputPath = Path.of("src/test/java/ditTest/singleClassExample");
 
         ProjectParser parser = new ProjectParser();
-        int dit = 0;
+        double dit = 0;
 
         try {
             MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
-            dit = result.getDIT();
+            dit = result.getMeanDIT();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

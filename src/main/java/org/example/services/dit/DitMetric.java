@@ -1,6 +1,7 @@
 package org.example.services.dit;
 
 import com.github.javaparser.ast.CompilationUnit;
+import org.example.services.InheritanceCollector;
 import org.example.services.Metric;
 import org.example.services.MetricContext;
 
@@ -18,24 +19,19 @@ public final class DitMetric implements Metric<DitResult> {
     public DitResult compute(MetricContext ctx) {
         // Get inheritance
         Map<String, String> inheritanceMap = new HashMap<>();
-
+        InheritanceCollector collector = new InheritanceCollector();
         for (CompilationUnit cu : ctx.compilationUnits()) {
-            // todo...
-            System.out.println(cu.toString());
+            cu.accept(collector, inheritanceMap);
         }
 
-
         // compute DIT per class
-
         Map<String, Integer> ditByClass = new HashMap<>();
 
         for (String className : inheritanceMap.keySet()) {
             int dit = computeDit(className, inheritanceMap);
             ditByClass.put(className, dit);
         }
-
         return new DitResult(ditByClass);
-
     }
 
     private int computeDit(String className, Map<String, String> inheritanceMap) {
