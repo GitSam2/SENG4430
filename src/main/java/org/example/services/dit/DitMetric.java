@@ -18,24 +18,19 @@ public final class DitMetric implements Metric<DitResult> {
     public DitResult compute(MetricContext ctx) {
         // Get inheritance
         Map<String, String> inheritanceMap = new HashMap<>();
-
+        InheritanceCollector collector = new InheritanceCollector();
         for (CompilationUnit cu : ctx.compilationUnits()) {
-            // todo...
-            System.out.println(cu.toString());
+            cu.accept(collector, inheritanceMap);
         }
 
-
         // compute DIT per class
-
         Map<String, Integer> ditByClass = new HashMap<>();
 
         for (String className : inheritanceMap.keySet()) {
             int dit = computeDit(className, inheritanceMap);
             ditByClass.put(className, dit);
         }
-
-        return new DitResult(ditByClass);
-
+        return new DitResult(ditByClass, 4, 5);
     }
 
     private int computeDit(String className, Map<String, String> inheritanceMap) {
