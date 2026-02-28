@@ -30,7 +30,7 @@ public final class DitMetric implements Metric<DitResult> {
             int dit = computeDit(className, inheritanceMap);
             ditByClass.put(className, dit);
         }
-        return new DitResult(ditByClass);
+        return new DitResult(ditByClass, 4, 5);
     }
 
     private int computeDit(String className, Map<String, String> inheritanceMap) {

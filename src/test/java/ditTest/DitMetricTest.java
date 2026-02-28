@@ -27,6 +27,7 @@ class DitMetricTest {
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
+            System.out.println(result.output());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -46,6 +47,7 @@ class DitMetricTest {
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
+            System.out.println(result.output());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

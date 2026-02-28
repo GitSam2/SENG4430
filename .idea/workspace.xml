@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22982cdb-3285-46dd-90f5-f459577e8812" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/multiClassExample/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/multiClassExample/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/multiClassExample/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/multiClassExample/Pet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/InheritanceCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/dit/InheritanceCollector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitMetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitMetric.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ditTest/DitMetricTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ditTest/DitMetricTest.java" afterDir="false" />
@@ -30,6 +26,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="DitMetricTest.objectHasDepth0" />
+    </enabled-run-configurations>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -160,5 +161,16 @@
       <updated>1771215185800</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
