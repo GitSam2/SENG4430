@@ -28,4 +28,8 @@ class IdentifierAnalyzerTest {
         IdentifierAnalyzer analyzer = new IdentifierAnalyzer();
         assertEquals(0, analyzer.getTotalLength()); // Checks totalLength
     }
+
+    // test if an identifier is over 30 is it added to over max length counter
+
+    // test if i only have 1 identifier is total indentifiers ONE
 }
