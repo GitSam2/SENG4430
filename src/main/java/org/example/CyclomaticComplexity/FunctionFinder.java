@@ -10,7 +10,7 @@ public class FunctionFinder extends GenericListVisitorAdapter<MethodDeclaration,
     @Override
     public List<MethodDeclaration> visit(MethodDeclaration n, Void args) {
         super.visit(n, args);
-        List<MethodDeclaration> methods = new ArrayList<MethodDeclaration>();
+        List<MethodDeclaration> methods = super.visit(n, args);
         if (n.getBody().isPresent()) {
             methods.add(n);
         }
