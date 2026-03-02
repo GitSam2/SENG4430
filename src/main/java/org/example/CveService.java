@@ -17,11 +17,11 @@ public class CveService {
     private final HttpClient client = HttpClient.newHttpClient();
     private final ObjectMapper mapper = new ObjectMapper();
     
-    public List<CveInfo> fetchCves(String groupId, String artifactId, String version) throws IOException, InterruptedException {
+    public List<CveInfo> fetchCves(DependencyModel model) throws IOException, InterruptedException {
         List<CveInfo> result = new ArrayList<>();
 
         // Parameterise string query
-        String purl = "pkg:maven/" + groupId + "/" + artifactId + "@" + version;
+        String purl = "pkg:maven/" + model.groupId() + "/" + model.artifactId() + "@" + model.version();
         String body = """
         {
             "package": {
@@ -51,7 +51,7 @@ public class CveService {
                 if (id != null && summary != null && details != null
                     && id.isString() && summary.isString() && details.isString()
                 ) {
-                    CveInfo cveInfo = new CveInfo(id.toString(), summary.toString(), details.toString());
+                    CveInfo cveInfo = new CveInfo(id.asString(), summary.asString(), details.asString());
                     result.add(cveInfo);
                 }
             }

@@ -26,6 +26,9 @@ public class DependencyTreeResolver {
         this.session = session;
     }
 
+    /// Resolves the dependencies of a POM file and returns a list of dependency trees for each direct dependency.
+    /// @param path The file path to the POM file.
+    /// @return A list of DependencyTree objects representing the dependency trees for each direct dependency.
     public List<DependencyTree> resolvePom(String path) throws ModelBuildingException, DependencyCollectionException {
         ModelBuildingRequest request = new DefaultModelBuildingRequest();
         request.setPomFile(new File(path));
@@ -46,6 +49,10 @@ public class DependencyTreeResolver {
         return dependencies;
     }
 
+    /// Resolves the dependencies of a specific module (dependency) and returns its dependency tree.
+    /// @param model The Maven model representing the POM file.
+    /// @param dependency The specific dependency for which to resolve the dependency tree.
+    /// @return A DependencyTree object representing the dependency tree for the specified module.
     public DependencyTree resolveModule(Model model, Dependency dependency) throws DependencyCollectionException {
         Artifact artifact = new DefaultArtifact(
                 dependency.getGroupId(),
