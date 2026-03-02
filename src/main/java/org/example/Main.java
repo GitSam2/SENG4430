@@ -31,8 +31,8 @@ public class Main {
 
         IO.println("Junit latest version: " + version.fetchLatestVersion("org.junit.jupiter", "junit-jupiter"));
         IO.println("Junit cves:");
-        for (CveInfo cve : cves.fetchCves("org.junit.platform", "junit-platform-reporting", "\n" + //
-                        "5.12.0")) {
+        DependencyModel model = new DependencyModel("junit-jupiter", "org.junit.jupiter", "5.12.0");
+        for (CveInfo cve : cves.fetchCves(model)) {
             IO.println(cve.id() + "\n" + cve.summary() + "\n" + cve.details());
         }
         
