@@ -16,18 +16,26 @@ public class Main {
 //        Path testInputPath = Path.of("src");        // test path
 ////        Path path = Path.of(args[0]);       // how It's supposed to be or smt similar
 //        JavaParserProvider.initialization(testInputPath);
-        // RepositorySystem system = MavenBootstrap.newRepositorySystem();
-        // RepositorySystemSession session = MavenBootstrap.newSession(system);
+        RepositorySystem system = MavenBootstrap.newRepositorySystem();
+        RepositorySystemSession session = MavenBootstrap.newSession(system);
 
-        // DependencyTreeResolver resolver =
-        //         new DependencyTreeResolver(system, session);
+        DependencyTreeResolver resolver =
+                new DependencyTreeResolver(system, session);
 
-        // List<DependencyTree> trees =
-        //         resolver.resolvePom("pom.xml");
+        List<DependencyTree> trees =
+                resolver.resolvePom("pom.xml");
 
-        // trees.forEach(TreePrinter::print);
+        trees.forEach(TreePrinter::print);
         VersionMetadataService version = new VersionMetadataService();
-        IO.println(version.fetchLatestVersion("org.junit.jupiter", "junit-jupiter"));
+        CveService cves = new CveService();
+
+        IO.println("Junit latest version: " + version.fetchLatestVersion("org.junit.jupiter", "junit-jupiter"));
+        IO.println("Junit cves:");
+        for (CveInfo cve : cves.fetchCves("org.junit.platform", "junit-platform-reporting", "\n" + //
+                        "5.12.0")) {
+            IO.println(cve.id() + "\n" + cve.summary() + "\n" + cve.details());
+        }
+        
     }
 
     // Example of how to use the parser
