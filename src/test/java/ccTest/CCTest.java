@@ -1,4 +1,6 @@
-import org.example.CyclomaticComplexity.CyclomaticComplexity;
+package ccTest;
+
+import org.example.services.CyclomaticComplexity.CyclomaticComplexity;
 import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
 import org.example.JavaParserProvider;

@@ -1,4 +1,4 @@
-package org.example.CyclomaticComplexity;
+package org.example.services.CyclomaticComplexity;
 
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.expr.BinaryExpr;

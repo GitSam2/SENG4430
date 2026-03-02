@@ -1,9 +1,8 @@
-package org.example.CyclomaticComplexity;
+package org.example.services.CyclomaticComplexity;
 
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.visitor.GenericListVisitorAdapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class FunctionFinder extends GenericListVisitorAdapter<MethodDeclaration, Void> {
