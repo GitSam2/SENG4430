@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22982cdb-3285-46dd-90f5-f459577e8812" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/services/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/release-please.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitMetric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitMetric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/dit/DitResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ditTest/DitMetricTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ditTest/DitMetricTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +49,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "fix/dit",
+    "git-widget-placeholder": "feat/release-please-codelines-action",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/mkr331/repo/mackenzieroddenby/SENG4430/src/test/java/ditTest"
   }
