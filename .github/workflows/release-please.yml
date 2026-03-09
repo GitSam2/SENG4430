@@ -1,3 +1,5 @@
+name: Release Please
+
 on:
   push:
     branches:
@@ -9,8 +11,6 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
-
-name: release-please
 
 jobs:
   release-please:
@@ -28,7 +28,7 @@ jobs:
 
   build:
     name: Build
-    needs: release
+    needs: release-please
     if: ${{ needs.release.outputs.release_created }}
     runs-on: ubuntu-latest
     steps:
