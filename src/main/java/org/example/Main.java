@@ -13,7 +13,7 @@ public class Main {
     static void main(String[] args) throws IOException {
         Path testInputPath = Path.of("src");        // test path
         Scanner scanner = new Scanner(System.in);
-//        Path path = Path.of(args[0]);       // how It's supposed to be or smt similar
+//        Path path = Path.of(args[0]);       // how It's supposed to be or smt similar test test test
         JavaParserProvider.initialization(testInputPath);           // replace w real path later
         Main main = new Main();
         main.metricSelection(scanner);
