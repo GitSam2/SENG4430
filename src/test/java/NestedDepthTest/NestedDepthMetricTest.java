@@ -1,0 +1,73 @@
+package NestedDepthTest;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import com.github.javaparser.ast.CompilationUnit;
+import org.example.services.ProjectParser;
+import org.example.services.NestedDepth.LoopDepthMetric;
+import org.example.services.NestedDepth.LoopMetrics;
+import org.example.services.MetricContext;
+import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.List;
+
+
+public class NestedDepthMetricTest 
+{
+    @Test
+    void singleClassExample() {
+        Path testInputPath = Path.of("src/test/java/NestedDepthTest/singleClassExample");
+
+        ProjectParser parser = new ProjectParser();
+        double flaggedCount = 0;
+
+        try 
+        {
+            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            LoopDepthMetric metric = new LoopDepthMetric();
+            LoopMetrics result = metric.compute(ctx);
+            flaggedCount = result.flaggedCount;
+            System.out.println("Single Class Test");
+            System.out.println("Max depth: " + result.maxDepth);
+            System.out.println("Flagged count: " + flaggedCount);
+
+        } catch (IOException e) 
+        {
+            throw new RuntimeException(e);
+        }
+
+        assertEquals(1.0, flaggedCount);
+    }
+
+    
+    @Test
+    void multiClassExample() {
+        Path testInputPath = Path.of("src/test/java/NestedDepthTest/multiClassExample");
+
+        ProjectParser parser = new ProjectParser();
+        double flaggedCount = 0;
+
+        try 
+        {
+            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            LoopDepthMetric metric = new LoopDepthMetric();
+            LoopMetrics result = metric.compute(ctx);
+            flaggedCount = result.flaggedCount;
+            System.out.println("Multi Class Test");
+            System.out.println("Max depth: " + result.maxDepth);
+            System.out.println("Flagged count: " + flaggedCount);
+
+        } catch (IOException e) 
+        {
+            throw new RuntimeException(e);
+        }
+
+        assertEquals(2.0, flaggedCount);
+    }
+
+}
+ 
+    
+
