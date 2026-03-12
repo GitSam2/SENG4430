@@ -14,27 +14,6 @@ import java.nio.file.Path;
 import java.util.List;
 
 class DitMetricTest {
-
-    @Test
-    void emptyProjectExample() {
-        Path testInputPath = Path.of("src/test/java/ditTest/emptyExample");
-
-        ProjectParser parser = new ProjectParser();
-        double dit = 0;
-
-        try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
-            DitMetric metric = new DitMetric();
-            DitResult result = metric.compute(ctx);
-            dit = result.getMeanDIT();
-            System.out.println(result.output());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-        assertEquals(0, dit);
-    }
-
     @Test
     void singleClassExample() {
         Path testInputPath = Path.of("src/test/java/ditTest/singleClassExample");

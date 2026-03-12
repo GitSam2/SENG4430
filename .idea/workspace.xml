@@ -5,17 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22982cdb-3285-46dd-90f5-f459577e8812" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/ABCDEExample/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/ABCDEExample/B.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/ABCDEExample/C.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/ABCDEExample/D.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/ABCDEExample/E.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/ABCExample/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/ABCExample/B.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/ABCExample/C.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/externalLibraryExample/CustomNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ditTest/externalLibraryExample/LocalClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ditTest/DitMetricTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ditTest/DitMetricTest.java" afterDir="false" />
     </list>
