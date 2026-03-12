@@ -1,4 +1,4 @@
-package org.example;
+package org.example.services.dependencies;
 
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.graph.DependencyNode;

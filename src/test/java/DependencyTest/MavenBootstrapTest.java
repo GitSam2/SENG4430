@@ -1,3 +1,4 @@
+package DependencyTest;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.eclipse.aether.RepositorySystemSession;
@@ -6,12 +7,11 @@ import org.eclipse.aether.artifact.DefaultArtifact;
 import org.eclipse.aether.collection.CollectRequest;
 import org.eclipse.aether.collection.CollectResult;
 import org.eclipse.aether.graph.Dependency;
+import org.example.services.dependencies.MavenBootstrap;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import org.eclipse.aether.RepositorySystem;
-
-import org.example.MavenBootstrap;
 
 @DisplayName("Test Maven resolver base classes")
 public class MavenBootstrapTest {

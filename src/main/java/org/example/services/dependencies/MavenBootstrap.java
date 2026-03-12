@@ -1,4 +1,4 @@
-package org.example;
+package org.example.services.dependencies;
 
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
 import org.eclipse.aether.DefaultRepositorySystemSession;

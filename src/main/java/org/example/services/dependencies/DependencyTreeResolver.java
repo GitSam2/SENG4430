@@ -1,4 +1,4 @@
-package org.example;
+package org.example.services.dependencies;
 
 import org.apache.maven.model.Dependency;
 import org.apache.maven.model.Model;

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.services.dependencies;
 
 import java.util.List;
 

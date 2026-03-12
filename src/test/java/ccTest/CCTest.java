@@ -4,7 +4,7 @@ import org.example.services.CyclomaticComplexity.CyclomaticComplexity;
 import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
 import org.example.JavaParserProvider;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Path;

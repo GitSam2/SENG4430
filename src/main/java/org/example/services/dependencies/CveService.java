@@ -1,4 +1,4 @@
-package org.example;
+package org.example.services.dependencies;
 
 import java.io.IOException;
 import java.net.URI;

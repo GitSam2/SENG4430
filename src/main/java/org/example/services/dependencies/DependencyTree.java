@@ -1,4 +1,4 @@
-package org.example;
+package org.example.services.dependencies;
 
 import org.apache.maven.model.Model;
 import org.eclipse.aether.graph.DependencyNode;
