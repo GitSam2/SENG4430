@@ -13,7 +13,7 @@ public class WmcMetric {
 
         List<Integer> wmcValues = new ArrayList<>();
 
-        for (CompilationUnit cu : ctx.getCompilationUnits()) {
+        for (CompilationUnit cu : ctx.compilationUnits()) {
 
             List<ClassOrInterfaceDeclaration> classes =
                     cu.findAll(ClassOrInterfaceDeclaration.class);
