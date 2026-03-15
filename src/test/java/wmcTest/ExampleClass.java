@@ -1,4 +1,4 @@
-package wmcTest.example;
+package wmcTest;
 
 public class ExampleClass {
 
