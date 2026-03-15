@@ -16,7 +16,7 @@ class WmcMetricTest {
     @Test
     void simpleExample() {
 
-        Path testInputPath = Path.of("src/test/java/wmcTest/example");
+        Path testInputPath = Path.of("src/test/java/wmcTest");
 
         ProjectParser parser = new ProjectParser();
 
