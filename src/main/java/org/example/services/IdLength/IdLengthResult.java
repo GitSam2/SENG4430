@@ -23,10 +23,9 @@ public class IdLengthResult implements Result {
     public String buildAnalysisOutput() {
         return "Identifier Length Analysis\n"
                 + "---------------------------\n"
-                + "Total identifiers: " + totalIdentifiers + "\n"
-                + "Maximum identifier length: " + maxIdentifierLength + "\n"
-                + "Average identifier length: "
-                + String.format("%.2f", totalLength);
+                + "Total identifiers: " + String.valueOf(totalIdentifiers) + "\n"
+                + "Maximum identifier length: " + String.valueOf(maxIdentifierLength) + "\n"
+                + "Average identifier length: " + String.valueOf(totalLength);
     }
 
     public int getMaxIdentifierLength() {

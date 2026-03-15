@@ -1,4 +1,4 @@
-package ditTest.singleClassExample;
+package IdLength.singleClassExample;
 
 
 public class Main {

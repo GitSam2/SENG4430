@@ -28,7 +28,7 @@ class IdLengthMetricTest {
             throw new RuntimeException(e);
         }
 
-        assertEquals(0, maxIdentifierLength);
+        assertEquals(4, maxIdentifierLength);
     }
 
 }
