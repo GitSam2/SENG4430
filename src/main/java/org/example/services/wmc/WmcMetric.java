@@ -1,11 +1,12 @@
 package org.example.services.wmc;
 
-import com.github.javaparser.ast.CompilationUnit;
-import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
-import org.example.services.MetricContext;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.example.services.MetricContext;
+
+import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 
 public class WmcMetric {
 
@@ -13,10 +14,9 @@ public class WmcMetric {
 
         List<Integer> wmcValues = new ArrayList<>();
 
-        for (CompilationUnit cu : ctx.getCompilationUnits()) {
+        for (CompilationUnit cu : ctx.compilationUnits()) {
 
-            List<ClassOrInterfaceDeclaration> classes =
-                    cu.findAll(ClassOrInterfaceDeclaration.class);
+            List<ClassOrInterfaceDeclaration> classes = cu.findAll(ClassOrInterfaceDeclaration.class);
 
             for (ClassOrInterfaceDeclaration cls : classes) {
 
