@@ -15,6 +15,7 @@ import static org.example.Main.parseProject;
 public class CCTest {
     @Test
     public void testCC() throws IOException {
+        // TODO: Fix this such that either we give it a basic project purely for testing or include project in github
         Path projectPath = Path.of("src/main/resources/powsybl-open-loadflow/src");
         JavaParserProvider.initialization(projectPath);
         List<ParseResult<CompilationUnit>> parsedFiles = parseProject();
