@@ -4,19 +4,17 @@ import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.utils.SourceRoot;
 
+import picocli.CommandLine;
+
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    static void main(String[] args) throws IOException {
-        Path testInputPath = Path.of("src");        // test path
-        Scanner scanner = new Scanner(System.in);
-//        Path path = Path.of(args[0]);       // how It's supposed to be or smt similar
-        JavaParserProvider.initialization(testInputPath);           // replace w real path later
-        Main main = new Main();
-        main.metricSelection(scanner);
+    public static void main(String... args) {
+        int exitCode = new CommandLine(new QualityToolCLI()).execute(args);
+        System.exit(exitCode);
     }
 
     public static List<ParseResult<CompilationUnit>> parseProject() throws IOException {
