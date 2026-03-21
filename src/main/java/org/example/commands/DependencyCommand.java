@@ -24,7 +24,7 @@ public class DependencyCommand extends BaseMetricCommand {
 
     @Override
     public String displayName() {
-        return "dependency";
+        return "Dependency Analysis";
     }
 
     @Override

@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22982cdb-3285-46dd-90f5-f459577e8812" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/QualityToolCLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/AllCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/BaseMetricCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/DependencyCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/MetricCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/TestCommandOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/TestCommandTwo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="22982cdb-3285-46dd-90f5-f459577e8812" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,11 +21,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JavaAutoRunManager">
-    <enabled-run-configurations>
-      <run-configuration type="JUnit" name="DitMetricTest.objectHasDepth0" />
-    </enabled-run-configurations>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -47,32 +29,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Debug",
-    "Application.ditTest.multiClassExample.Main.executor": "Debug",
-    "JUnit.DitMetricTest.executor": "Run",
-    "JUnit.DitMetricTest.multiClassExample.executor": "Run",
-    "JUnit.DitMetricTest.objectHasDepth0.executor": "Debug",
-    "JUnit.DitMetricTest.singleClassExample.executor": "Run",
-    "Maven.src [package].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feat/picocli",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/repos/SENG4430",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.ditTest.multiClassExample.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.DitMetricTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DitMetricTest.multiClassExample.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DitMetricTest.objectHasDepth0.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.DitMetricTest.singleClassExample.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.src [package].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/picocli&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/repos/SENG4430&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/ditTest" />
