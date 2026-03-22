@@ -7,13 +7,14 @@ import com.github.javaparser.utils.SourceRoot;
 import picocli.CommandLine;
 
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String... args) {
-        int exitCode = new CommandLine(new QualityToolCLI()).execute(args);
+        CommandLine cmd = new CommandLine(new QualityToolCLI());
+        cmd.setExecutionStrategy(new CommandLine.RunAll());
+        int exitCode = cmd.execute(args);
         System.exit(exitCode);
     }
 
