@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.commands.AllCommand;
-import org.example.commands.DependencyCommand;
-import org.example.commands.TestCommandOne;
-import org.example.commands.TestCommandTwo;
+import org.example.commands.*;
 import org.example.utils.Console;
 import picocli.CommandLine;
 import picocli.CommandLine.*;
@@ -28,15 +25,13 @@ import java.util.concurrent.Callable;
             "  @|italic Software Quality Analysis CLI|@ — run one, many, or @|bold --all|@ checks.",
             ""
         },
-        subcommands = {TestCommandOne.class, TestCommandTwo.class, DependencyCommand.class, AllCommand.class},
+//        AllCommand.class
+        subcommands = {CyclomaticComplexityCommand.class},
         subcommandsRepeatable = true,
         footer = {
             "",
             "  @|bold Examples:|@",
-            "    qualitytool --all -p ./my-project",
-            "    qualitytool cyclomatic inheritance -p ./src",
-            "    qualitytool dependency --cves --transitive -p ./my-project",
-            "    qualitytool loc coupling -p ./src --output report.json",
+            "    qualitytool cc -p ./my-project",
             ""
         }
         )
@@ -47,20 +42,24 @@ public class QualityToolCLI implements Callable<Integer> {
             scope = ScopeType.INHERIT)
     public Path projectPath;
 
-    @Option(names = {"--no-color"},
+    @Option(names = {"--no-color", "--no-colour"},
             description = "Disable ANSI color output",
             scope = ScopeType.INHERIT)
     public boolean noColor;
 
-    @Option(names = {"--fail-threshold"},
-            description = "Enable error on breaching threshold. Use --threshold in each subcommand to give one.")
+    @Option(names = {"-t", "--fail-threshold"},
+            description = "Enable error on breaching threshold. Use --threshold in each subcommand to give one.",
+            scope = ScopeType.INHERIT)
     public boolean failThreshold;
+
+//    @Option(names = { "-h", "--help" }, usageHelp = true, description = "display a help message")
+//    private boolean helpRequested = false;
 
     @Spec CommandSpec spec;
 
     /// Entrypoint into command
     @Override
-    public Integer call() throws Exception {
+    public Integer call() {
         Console.init(spec, noColor);
 
         CommandLine commandLine = spec.commandLine();
@@ -68,6 +67,9 @@ public class QualityToolCLI implements Callable<Integer> {
             commandLine.usage(System.err);
             return 1;
         }
+
+        // Initialise the java parser once
+        JavaParserProvider.initialization(projectPath);
 
         return 0;
     }
