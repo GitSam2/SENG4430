@@ -34,6 +34,13 @@ public abstract class BaseMetricCommand implements Callable<Integer>, MetricComm
         }
 
         System.out.println();
+        if (result instanceof Integer) {
+            if ((Integer) result != 0) {
+                Console.error("Failed %s".formatted(displayName()));
+                return (Integer) result;
+            }
+        }
+
         Console.success("Done %s".formatted(displayName()));
         System.out.println();
         return 0;
