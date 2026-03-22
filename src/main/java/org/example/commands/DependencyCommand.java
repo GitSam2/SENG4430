@@ -4,8 +4,6 @@ import org.example.QualityToolCLI;
 import org.example.utils.Console;
 import picocli.CommandLine.*;
 
-import java.util.concurrent.Callable;
-
 @Command(
         name = "dep",
         aliases = {},

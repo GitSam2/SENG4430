@@ -1,7 +1,5 @@
 package org.example.commands;
 
-import org.example.services.MetricContext;
-
 public interface MetricCommand {
     /// Human-readable name used in display headers
     public String displayName();
