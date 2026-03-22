@@ -77,6 +77,7 @@ public class CyclomaticComplexityCommand extends BaseMetricCommand {
         }
 
         CyclomaticComplexity cc = new CyclomaticComplexity();
+        // Headers of the table columns
         String[] headers = {
                 "File",
                 "Average",
@@ -84,6 +85,8 @@ public class CyclomaticComplexityCommand extends BaseMetricCommand {
                 "Severity"
         };
 
+        // Widths in characters of each column
+        // Currently terminal width with columns is determined by hand
         int[] widths = {
                 Console.terminalWidth() - 31,
                 8,
@@ -93,6 +96,7 @@ public class CyclomaticComplexityCommand extends BaseMetricCommand {
 
         boolean hasFailed = false;
         List<CyclomaticComplexityResult> result = cc.calculateCyclomaticComplexity(parsedFiles, warningThresholdNumber, failureThresholdNumber);
+        // Create a row X column table of cells below the header row
         String[][] rows = new String[result.size()][headers.length];
         int rowIndex = 0;
         for (CyclomaticComplexityResult cyclomaticComplexityResult : result) {
