@@ -7,8 +7,6 @@ import java.util.List;
 public final class MetricContext {
     private final List<CompilationUnit> compilationUnits;
 
-
-
     public MetricContext(List<CompilationUnit> compilationUnits) {
         this.compilationUnits = List.copyOf(compilationUnits);
     }

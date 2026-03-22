@@ -5,6 +5,8 @@ import org.example.QualityToolCLI;
 import org.example.services.MetricContext;
 import org.example.services.dit.DitMetric;
 import org.example.services.dit.DitResult;
+import org.example.utils.Console;
+
 import picocli.CommandLine.*;
 
 
@@ -31,10 +33,21 @@ public class DitCommand extends BaseMetricCommand {
 
     @Override
     public Integer execute() throws Exception {
+        //============ Parse options ============
+        // This command requires a path to the project
+        if (parent.projectPath == null) {
+            Console.error("Project path is required. Use -p or --project to specify the path.");
+            return 1;
+        }
+
+        //============ Metric business logic ============
         MetricContext ctx = Main.ctx;
         DitMetric metric = new DitMetric();
         DitResult result = metric.compute(ctx);
+
+        //============ Display logic ============
         System.out.println(result.output());
+        
         return 0;
     }
 
