@@ -1,11 +1,14 @@
 package org.example;
 
 import org.example.commands.*;
+import org.example.services.MetricContext;
+import org.example.services.ProjectParser;
 import org.example.utils.Console;
 import picocli.CommandLine;
 import picocli.CommandLine.*;
 import picocli.CommandLine.Model.*;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.concurrent.Callable;
 
@@ -26,7 +29,7 @@ import java.util.concurrent.Callable;
             ""
         },
 //        AllCommand.class
-        subcommands = {CyclomaticComplexityCommand.class},
+        subcommands = {CyclomaticComplexityCommand.class, DitCommand.class},
         subcommandsRepeatable = true,
         footer = {
             "",
@@ -59,7 +62,7 @@ public class QualityToolCLI implements Callable<Integer> {
 
     /// Entrypoint into command
     @Override
-    public Integer call() {
+    public Integer call() throws IOException {
         Console.init(spec, noColor);
 
         CommandLine commandLine = spec.commandLine();
@@ -70,6 +73,10 @@ public class QualityToolCLI implements Callable<Integer> {
 
         // Initialise the java parser once
         JavaParserProvider.initialization(projectPath);
+
+        // this needs to be changed because we can't do this twice but for the moment I'm adding this:
+        ProjectParser parser = new ProjectParser();
+        Main.ctx = new MetricContext(parser.parseProject(projectPath));
 
         return 0;
     }

@@ -4,6 +4,7 @@ import com.github.javaparser.ParseResult;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.utils.SourceRoot;
 
+import org.example.services.MetricContext;
 import picocli.CommandLine;
 
 import java.io.IOException;
@@ -11,6 +12,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    public static MetricContext ctx;
+
+
     public static void main(String... args) {
         CommandLine cmd = new CommandLine(new QualityToolCLI());
         cmd.setExecutionStrategy(new CommandLine.RunAll());
@@ -21,7 +25,7 @@ public class Main {
     public static List<ParseResult<CompilationUnit>> parseProject() throws IOException {
         SourceRoot parser = JavaParserProvider.getInstance();
         return parser.tryToParse();
-    }
+    } // I think this would mean that the project as re-passed every time parseProject() is used.
 
     public void metricSelection(Scanner scanner) throws IOException {
 //        if (projectPath == null) {                        // prolly need to make a project path check bcs what if they feed dumb path
