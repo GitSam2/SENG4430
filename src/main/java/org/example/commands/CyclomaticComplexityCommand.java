@@ -52,7 +52,6 @@ public class CyclomaticComplexityCommand extends BaseMetricCommand {
 
     boolean exceededThresholdResult = false;
 
-
     @Override
     public Integer execute() throws Exception {
         int warningThresholdNumber = 0;
@@ -66,15 +65,16 @@ public class CyclomaticComplexityCommand extends BaseMetricCommand {
         }
 
         List<ParseResult<CompilationUnit>> parsedFiles;
-//        try {
+        try {
             parsedFiles = parseProject();
             if (parsedFiles.isEmpty()) {
                 Console.error("Project path contains no java files!");
                 return 1;
             }
-//        } catch (IOException e) {
-//
-//        }
+        } catch (IOException e) {
+            Console.error("Could not parse project files!");
+            return 1;
+        }
 
         CyclomaticComplexity cc = new CyclomaticComplexity();
         String[] headers = {
