@@ -54,6 +54,7 @@ public class CyclomaticComplexityCommand extends BaseMetricCommand {
 
     @Override
     public Integer execute() throws Exception {
+        //============ Parse options ============
         int warningThresholdNumber = 0;
         int failureThresholdNumber = 0;
         try {
@@ -64,6 +65,7 @@ public class CyclomaticComplexityCommand extends BaseMetricCommand {
             return 1;
         }
 
+        //============ Metric business logic ============
         List<ParseResult<CompilationUnit>> parsedFiles;
         try {
             parsedFiles = parseProject();
@@ -77,6 +79,8 @@ public class CyclomaticComplexityCommand extends BaseMetricCommand {
         }
 
         CyclomaticComplexity cc = new CyclomaticComplexity();
+
+        //============ Display logic ============
         // Headers of the table columns
         String[] headers = {
                 "File",
