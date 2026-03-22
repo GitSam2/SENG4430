@@ -65,18 +65,24 @@ public class Console {
         {
             StringBuilder rowBuilder = new StringBuilder();
             for (int width : widths) {
-                rowBuilder.append("%-").append(width).append("s|").append("%n");
+                rowBuilder.append("%-").append(width-1).append("s|");
             }
+            rowBuilder.append("%n");
             rowPattern = rowBuilder.toString();
         }
 
         // Print header of table
         sb.append(rowPattern.formatted((Object[]) headers));
         sb.append(divider());
+        sb.append("%n".formatted());
 
         // Print body of table
-        int widthsIndex = 0;
         for (String[] row : rows) {
+            // Shorten long cells to fit length
+            int cellIndex = 0;
+            for (int i = 0; i < row.length; i++) {
+                row[i] = ellipsis(row[i], widths[cellIndex]-1);
+            }
             sb.append(rowPattern.formatted((Object[]) row));
         }
 
@@ -94,5 +100,13 @@ public class Console {
     public static String header(String fmt, Object... args) {
         String result = "%n" + cyan(divider('=') + "%n" + fmt + "%n" + divider('='));
         return result.formatted(args);
+    }
+
+    public static String ellipsis(final String text, int length) {
+        if (text.length() > length) {
+            return text.substring(0, length - 3) + "...";
+        }
+
+        return text;
     }
 }
