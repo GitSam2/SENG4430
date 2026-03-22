@@ -94,7 +94,6 @@ public class CyclomaticComplexityCommand extends BaseMetricCommand {
                 9
         };
 
-        boolean hasFailed = false;
         List<CyclomaticComplexityResult> result = cc.calculateCyclomaticComplexity(parsedFiles, warningThresholdNumber, failureThresholdNumber);
         // Create a row X column table of cells below the header row
         String[][] rows = new String[result.size()][headers.length];

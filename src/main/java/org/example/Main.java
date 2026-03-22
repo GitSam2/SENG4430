@@ -13,7 +13,6 @@ import java.util.List;
 public class Main {
     public static MetricContext ctx;
 
-
     public static void main(String... args) {
         CommandLine cmd = new CommandLine(new QualityToolCLI());
         cmd.setExecutionStrategy(new CommandLine.RunAll());
