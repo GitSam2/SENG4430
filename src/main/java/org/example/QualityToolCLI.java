@@ -29,7 +29,7 @@ import java.util.concurrent.Callable;
             ""
         },
 //        AllCommand.class
-        subcommands = {CyclomaticComplexityCommand.class, DitCommand.class, IdentifierLengthCommand.class, LoopDepthCommand.class},
+        subcommands = {CyclomaticComplexityCommand.class, DitCommand.class, IdentifierLengthCommand.class, LoopDepthCommand.class, WMCCommand.class},
         subcommandsRepeatable = true,
         footer = {
             "",
