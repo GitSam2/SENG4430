@@ -30,6 +30,13 @@
             <version>3.28.0</version>
         </dependency>
 
+        <!-- CVSS parser -->
+         <dependency>
+            <groupId>us.springett</groupId>
+            <artifactId>cvss-calculator</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+
         <!-- Maven Pom Resolver -->
         <dependency>
             <groupId>org.apache.maven.resolver</groupId>

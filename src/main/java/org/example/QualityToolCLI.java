@@ -29,12 +29,17 @@ import java.util.concurrent.Callable;
             ""
         },
 //        AllCommand.class
-        subcommands = {CyclomaticComplexityCommand.class, DitCommand.class, IdentifierLengthCommand.class, LoopDepthCommand.class, WMCCommand.class},
+        subcommands = {CyclomaticComplexityCommand.class, DitCommand.class, IdentifierLengthCommand.class, LoopDepthCommand.class, WMCCommand.class, DependencyCommand.class},
         subcommandsRepeatable = true,
         footer = {
             "",
             "  @|bold Examples:|@",
             "    qualitytool cc -p ./my-project",
+            "    qualitytool dit -p ./my-project",
+            "    qualitytool id -p ./my-project",
+            "    qualitytool ld -p ./my-project",
+            "    qualitytool wmc -p ./my-project",
+            "    qualitytool dep -p ./my-project",
             ""
         }
         )
@@ -76,7 +81,7 @@ public class QualityToolCLI implements Callable<Integer> {
 
         // this needs to be changed because we can't do this twice but for the moment I'm adding this:
         ProjectParser parser = new ProjectParser();
-        Main.ctx = new MetricContext(parser.parseProject(projectPath));
+        Main.ctx = new MetricContext(projectPath, parser.parseProject(projectPath));
 
         return 0;
     }

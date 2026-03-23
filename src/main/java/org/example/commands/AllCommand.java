@@ -1,7 +1,5 @@
 package org.example.commands;
 
-import org.example.QualityToolCLI;
-import org.example.services.MetricContext;
 import picocli.CommandLine;
 import picocli.CommandLine.*;
 

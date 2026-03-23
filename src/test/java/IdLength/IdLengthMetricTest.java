@@ -28,7 +28,7 @@ class IdLengthMetricTest {
         double maxIdentifierLength = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             IdLengthMetric metric = new IdLengthMetric();
             IdLengthResult result = metric.compute(ctx);
             maxIdentifierLength = result.getMaxIdentifierLength();
@@ -48,7 +48,7 @@ class IdLengthMetricTest {
         double maxIdentifierLength = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             IdLengthMetric metric = new IdLengthMetric();
             IdLengthResult result = metric.compute(ctx);
             maxIdentifierLength = result.getMaxIdentifierLength();

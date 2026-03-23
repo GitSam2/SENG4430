@@ -2,7 +2,6 @@ package NestedDepthTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.github.javaparser.ast.CompilationUnit;
 import org.example.services.ProjectParser;
 import org.example.services.NestedDepth.LoopDepthMetric;
 import org.example.services.NestedDepth.LoopMetrics;
@@ -11,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.List;
 
 
 public class NestedDepthMetricTest 
@@ -25,7 +23,7 @@ public class NestedDepthMetricTest
 
         try 
         {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             LoopDepthMetric metric = new LoopDepthMetric();
             LoopMetrics result = metric.compute(ctx);
             flaggedCount = result.flaggedCount;
@@ -51,7 +49,7 @@ public class NestedDepthMetricTest
 
         try 
         {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             LoopDepthMetric metric = new LoopDepthMetric();
             LoopMetrics result = metric.compute(ctx);
             flaggedCount = result.flaggedCount;

@@ -30,6 +30,7 @@ public class CveServiceTest {
         assertNotNull(cveInfos);
         assertFalse(cveInfos.isEmpty());
         assertEquals("GHSA-2hmj-97jw-28jh", cveInfos.get(0).id());
+        System.out.println(cveInfos.get(0).cvsScore());
         assertEquals("Apache ZooKeeper: Insufficient Permission Check in AdminServer Snapshot/Restore Commands", cveInfos.get(0).summary());
     }
 }

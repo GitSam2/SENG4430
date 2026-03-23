@@ -23,7 +23,7 @@ class WmcMetricTest {
         try {
 
             MetricContext ctx =
-                    new MetricContext(parser.parseProject(testInputPath));
+                    new MetricContext(testInputPath, parser.parseProject(testInputPath));
 
             WmcMetric metric = new WmcMetric();
 

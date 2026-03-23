@@ -11,6 +11,8 @@ import java.util.List;
 
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
+import us.springett.cvss.Cvss;
+import us.springett.cvss.Score;
 
 public class CveService {
     private static final String URL_STRING = "https://api.osv.dev/v1/query";
@@ -110,16 +112,42 @@ public class CveService {
                 JsonNode id = v.get("id");
                 JsonNode summary = v.get("summary");
                 JsonNode details = v.get("details");
+                JsonNode severity = v.get("severity");
+                JsonNode affected = v.get("affected");
 
-                if (id != null && summary != null && details != null
-                    && id.isString() && summary.isString() && details.isString()
+                if (id != null && summary != null && details != null && severity != null && affected != null
+                    && id.isString() && summary.isString() && details.isString() && severity.isArray() && affected.isArray()
                 ) {
-                    CveInfo cveInfo = new CveInfo(id.asString(), summary.asString(), details.asString());
-                    result.add(cveInfo);
+                    JsonNode cvss = severity.get(0).get("score");
+                    JsonNode type = affected.get(0).get("ranges").get(0).get("type");
+                    if (cvss != null && cvss.isString() && type != null && type.isString()) {
+                        Cvss cvssObj = Cvss.fromVector(cvss.asString());
+
+                        // Calculate the score
+                        Score score = cvssObj.calculateScore();
+                        double baseScore = score.getBaseScore(); // e.g. 9.8
+                        String fixedVersion = null;
+                        if (type.asString().equals("SEMVER") || type.asString().equals("ECOSYSTEM")) {
+                            fixedVersion = extractFixedVersion(affected.get(0).get("ranges").get(0).get("events"));
+                        }
+
+                        CveInfo cveInfo = new CveInfo(id.asString(), summary.asString(), details.asString(), baseScore, fixedVersion);
+                        result.add(cveInfo);
+                    }
                 }
             }
         }
 
         return result;
+    }
+
+    private String extractFixedVersion(JsonNode events) {
+        for (JsonNode event : events) {
+            JsonNode fixed = event.get("fixed");
+            if (fixed != null && fixed.isString()) {
+                return fixed.asString();
+            }
+        }
+        return null;
     }
 }

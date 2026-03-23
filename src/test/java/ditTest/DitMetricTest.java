@@ -20,7 +20,7 @@ class DitMetricTest {
         double dit = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
@@ -40,7 +40,7 @@ class DitMetricTest {
         double dit = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
@@ -62,7 +62,7 @@ class DitMetricTest {
         double dit = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
@@ -83,7 +83,7 @@ class DitMetricTest {
         double dit = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
@@ -104,7 +104,7 @@ class DitMetricTest {
         double dit = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
