@@ -2,7 +2,6 @@ package ditTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.github.javaparser.ast.CompilationUnit;
 import org.example.services.ProjectParser;
 import org.example.services.dit.DitMetric;
 import org.example.services.dit.DitResult;
@@ -11,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.List;
 
 class DitMetricTest {
     @Test

@@ -1,6 +1,5 @@
 package DependencyTest;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -9,7 +8,6 @@ import java.util.List;
 
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
-import org.eclipse.aether.graph.DependencyNode;
 import org.example.services.dependencies.DependencyTree;
 import org.example.services.dependencies.DependencyTreeResolver;
 import org.example.services.dependencies.MavenBootstrap;

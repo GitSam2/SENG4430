@@ -5,7 +5,6 @@ import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.artifact.DefaultArtifact;
 import org.eclipse.aether.collection.CollectRequest;
-import org.eclipse.aether.collection.CollectResult;
 import org.eclipse.aether.graph.Dependency;
 import org.example.services.dependencies.MavenBootstrap;
 import org.junit.jupiter.api.DisplayName;
@@ -34,7 +33,7 @@ public class MavenBootstrapTest {
         collect.setRepositories(MavenBootstrap.defaultRepositories());
 
         assertDoesNotThrow(() -> {
-            CollectResult result = repositorySystem.collectDependencies(repositorySystemSession, collect);
+            repositorySystem.collectDependencies(repositorySystemSession, collect);
         });
     }
 }

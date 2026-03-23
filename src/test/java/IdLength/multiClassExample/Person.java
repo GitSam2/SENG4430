@@ -14,4 +14,30 @@ public class Person {
     public void printInfo() {
         System.out.println("Name: " + name + ", Age: " + age);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getThisIdentifierIsOver30CharactersLong() {
+        return thisIdentifierIsOver30CharactersLong;
+    }
+
+    public void setThisIdentifierIsOver30CharactersLong(String thisIdentifierIsOver30CharactersLong) {
+        this.thisIdentifierIsOver30CharactersLong = thisIdentifierIsOver30CharactersLong;
+    }
+
+    
 }
