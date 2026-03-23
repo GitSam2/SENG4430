@@ -5,7 +5,6 @@ import org.example.QualityToolCLI;
 import org.example.services.MetricContext;
 import org.example.services.dit.DitMetric;
 import org.example.services.dit.DitResult;
-import org.example.utils.Console;
 
 import picocli.CommandLine.*;
 
