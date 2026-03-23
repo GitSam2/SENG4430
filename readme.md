@@ -15,17 +15,17 @@ To build, just run:
 ```bash
 mvn package -f pom.xml
 ```
-This produces target/src-1.0-SNAPSHOT.jar (named after the artifactId src).
+This produces target/qualitytool-1.0-SNAPSHOT.jar (named after the artifactId qualitytool).
 
 ## Running the program
 ```bash
-java -jar target/src-1.0-SNAPSHOT.jar cc
+java -jar target/qualitytool-1.0.jar cc
 ```
 
 Examples:
 ```bash
-java -jar target/src-1.0-SNAPSHOT.jar cc -p src/test/java/ditTest/ABCExample
+java -jar target/qualitytool-1.0.jar cc -p src/test/java/ditTest/ABCExample
 ```
 ```bash
-java -jar target/src-1.0-SNAPSHOT.jar dit -p src/test/java/ditTest/ABCExample
+java -jar target/qualitytool-1.0.jar dit -p src/test/java/ditTest/ABCExample
 ```
