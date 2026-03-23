@@ -5,7 +5,6 @@ import org.example.QualityToolCLI;
 import org.example.services.MetricContext;
 import org.example.services.IdLength.IdLengthMetric;
 import org.example.services.IdLength.IdLengthResult;
-import org.example.utils.Console;
 
 import picocli.CommandLine.*;
 
