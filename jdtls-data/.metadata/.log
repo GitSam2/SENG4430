@@ -1,0 +1,2540 @@
+!SESSION 2026-02-22 15:26:08.224 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AU
+Command-line arguments:  -data C:/repos/SENG4430/jdtls-data
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:11.134
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:11.301
+!MESSAGE Started org.eclipse.buildship.core 78ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:11.302
+!MESSAGE Started org.eclipse.m2e.core 1ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:11.862
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:12.109
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:12.117
+!MESSAGE Initializing Java Language Server 1.50.0.202508151735
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:13.334
+!MESSAGE ProjectRegistryRefreshJob finished 2030ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:13.393
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:13.394
+!MESSAGE Non-Static Commands: [java.project.import, java.project.changeImportedProjects, java.navigate.openTypeHierarchy, java.project.resolveStackTraceLocation, java.edit.handlePasteEvent, java.edit.stringFormatting, java.project.getSettings, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.createModuleInfo, java.vm.getAllInstalls, java.edit.organizeImports, java.project.refreshDiagnostics, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.updateSettings, java.project.getAll, java.reloadBundles, java.project.isTestFile, java.project.resolveText, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.edit.smartSemicolonDetection, java.project.updateSourceAttachment, java.project.updateClassPaths, java.decompile, java.protobuf.generateSources, java.project.resolveSourceAttachment, java.project.updateJdk, java.project.addToSourcePath, java.completion.onDidSelect]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:13.431
+!MESSAGE RepositoryRegistryUpdateJob finished 1ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:13.456
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:13.639
+!MESSAGE Importing Maven project(s)
+
+!ENTRY org.eclipse.jdt.ls.core 4 0 2026-02-22 15:26:14.267
+!MESSAGE Failed to import projects
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:219)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:95)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:316)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:302)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.create(ProjectConfigurationManager.java:843)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.lambda$1(ProjectConfigurationManager.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.importProjects(ProjectConfigurationManager.java:139)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.importProjects(ProjectConfigurationManager.java:130)
+	at org.eclipse.jdt.ls.core.internal.managers.MavenProjectImporter.importToWorkspace(MavenProjectImporter.java:242)
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.importProjects(ProjectsManager.java:164)
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.initializeProjects(ProjectsManager.java:126)
+	at org.eclipse.jdt.ls.core.internal.handlers.InitHandler$1.runInWorkspace(InitHandler.java:263)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: OK
+Contains: C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2026-02-22 15:26:14.269
+!MESSAGE Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+!SUBENTRY 2 unknown 0 0 2026-02-22 15:26:14.271
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.core.resources 4 77 2026-02-22 15:26:14.271
+!MESSAGE C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+
+!ENTRY org.eclipse.jdt.ls.core 4 0 2026-02-22 15:26:14.278
+!MESSAGE Initialization failed 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to import projects
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.importProjects(ProjectsManager.java:177)
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.initializeProjects(ProjectsManager.java:126)
+	at org.eclipse.jdt.ls.core.internal.handlers.InitHandler$1.runInWorkspace(InitHandler.java:263)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+Contains: OK
+Contains: C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+!SUBENTRY 1 org.eclipse.jdt.ls.core 4 -1 2026-02-22 15:26:14.279
+!MESSAGE Failed to import projects
+!SUBENTRY 2 org.eclipse.core.resources 4 77 2026-02-22 15:26:14.279
+!MESSAGE Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+!SUBENTRY 3 unknown 0 0 2026-02-22 15:26:14.279
+!MESSAGE OK
+!SUBENTRY 3 org.eclipse.core.resources 4 77 2026-02-22 15:26:14.279
+!MESSAGE C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:14.305
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:14.406
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:14.407
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:14.418
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:14.437
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:14.477
+!MESSAGE Creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:14.483
+!MESSAGE Creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:14.782
+!MESSAGE Finished creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:15.483
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:16.217
+!MESSAGE begin problem for /Main.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:16.218
+!MESSAGE 1 problems reported for /Main.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:16.235
+!MESSAGE Validated 1. Took 150 ms
+
+!ENTRY org.eclipse.jdt.ls.core 4 0 2026-02-22 15:26:16.263
+!MESSAGE Failed to create linked resource from file:/C:/repos/SENG4430/src/main/java/org/example/JavaParserProvider.java to jdt.ls-java-project
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException(/jdt.ls-java-project/src/org/example/JavaParserProvider.java)[367]: java.lang.Exception: Resource '/jdt.ls-java-project/src/org/example/JavaParserProvider.java' already exists.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Workspace.createResource(Workspace.java:1477)
+	at org.eclipse.core.internal.resources.Workspace.createResource(Workspace.java:1407)
+	at org.eclipse.core.internal.resources.Resource.createLink(Resource.java:697)
+	at org.eclipse.jdt.ls.core.internal.JDTUtils.getFakeCompilationUnit(JDTUtils.java:319)
+	at org.eclipse.jdt.ls.core.internal.JDTUtils.resolveCompilationUnit(JDTUtils.java:206)
+	at org.eclipse.jdt.ls.core.internal.JDTUtils.resolveTypeRoot(JDTUtils.java:494)
+	at org.eclipse.jdt.ls.core.internal.JDTUtils.resolveTypeRoot(JDTUtils.java:453)
+	at org.eclipse.jdt.ls.core.internal.handlers.SemanticTokensHandler.full(SemanticTokensHandler.java:36)
+	at org.eclipse.jdt.ls.core.internal.handlers.JDTLanguageServer.lambda$57(JDTLanguageServer.java:1205)
+	at org.eclipse.jdt.ls.core.internal.BaseJDTLanguageServer.lambda$0(BaseJDTLanguageServer.java:87)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+!SUBENTRY 1 org.eclipse.core.resources 4 367 2026-02-22 15:26:16.267
+!MESSAGE Resource '/jdt.ls-java-project/src/org/example/JavaParserProvider.java' already exists.
+!STACK 0
+java.lang.Exception: Resource '/jdt.ls-java-project/src/org/example/JavaParserProvider.java' already exists.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Workspace.createResource(Workspace.java:1477)
+	at org.eclipse.core.internal.resources.Workspace.createResource(Workspace.java:1407)
+	at org.eclipse.core.internal.resources.Resource.createLink(Resource.java:697)
+	at org.eclipse.jdt.ls.core.internal.JDTUtils.getFakeCompilationUnit(JDTUtils.java:319)
+	at org.eclipse.jdt.ls.core.internal.JDTUtils.resolveCompilationUnit(JDTUtils.java:206)
+	at org.eclipse.jdt.ls.core.internal.JDTUtils.resolveTypeRoot(JDTUtils.java:494)
+	at org.eclipse.jdt.ls.core.internal.JDTUtils.resolveTypeRoot(JDTUtils.java:453)
+	at org.eclipse.jdt.ls.core.internal.handlers.SemanticTokensHandler.full(SemanticTokensHandler.java:36)
+	at org.eclipse.jdt.ls.core.internal.handlers.JDTLanguageServer.lambda$57(JDTLanguageServer.java:1205)
+	at org.eclipse.jdt.ls.core.internal.BaseJDTLanguageServer.lambda$0(BaseJDTLanguageServer.java:87)
+	at java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:646)
+	at java.base/java.util.concurrent.CompletableFuture$Completion.exec(CompletableFuture.java:483)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188)
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:16.346
+!MESSAGE Reconciled 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:16.800
+!MESSAGE begin problem for /JavaParserProvider.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:16.801
+!MESSAGE 1 problems reported for /JavaParserProvider.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:16.803
+!MESSAGE Validated 1. Took 54 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:39.599
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:40.024
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:40.038
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:40.039
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:40.040
+!MESSAGE Validated 1. Took 28 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:47.362
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:47.782
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:47.783
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:47.784
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:26:47.785
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:28:37.297
+!MESSAGE Reconciled 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:28:37.719
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:28:37.720
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:28:37.721
+!MESSAGE 3 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:28:37.722
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:29:58.804
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:29:59.227
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:29:59.228
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:29:59.229
+!MESSAGE 3 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:29:59.229
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:29:59.578
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:29:59.770
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:29:59.804
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:29:59.839
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:00.228
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:00.229
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:00.229
+!MESSAGE 6 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:00.230
+!MESSAGE Validated 1. Took 12 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:00.470
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:00.530
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:00.574
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:00.613
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.027
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.028
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.028
+!MESSAGE 6 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.030
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.127
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.164
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.213
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.249
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.667
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.668
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.668
+!MESSAGE 6 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:01.669
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.131
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.176
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.240
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.242
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.314
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.327
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.455
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.479
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.622
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.634
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.764
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:02.804
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:03.193
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:03.205
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:03.604
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:03.605
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:03.606
+!MESSAGE 6 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:03.606
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:03.910
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:03.920
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:04.164
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:04.181
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:04.586
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:04.587
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:04.587
+!MESSAGE 6 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:04.588
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:06.788
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:06.799
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.192
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.197
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.356
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.395
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.420
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.458
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.619
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.634
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.846
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.849
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.944
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:07.987
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:08.394
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:08.395
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:08.395
+!MESSAGE 6 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:08.396
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:09.569
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:09.630
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:10.041
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:10.042
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:10.043
+!MESSAGE 6 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:10.044
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:10.525
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:10.533
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:10.729
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:10.737
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:10.823
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:10.876
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:11.335
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:11.336
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:11.336
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:11.337
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:11.435
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:11.481
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:11.725
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:11.727
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:11.810
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:11.854
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:12.312
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:12.313
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:12.313
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:30:12.314
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:44.422
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:44.462
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:44.621
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:44.661
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:44.722
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:44.761
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:44.807
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:44.808
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:44.855
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:44.871
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.004
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.043
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.118
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.169
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.319
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.356
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.436
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.481
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.544
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.550
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.601
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.651
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.797
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.808
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.909
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:45.949
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:46.358
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:46.358
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:46.359
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:46.360
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:47.480
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:47.480
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:47.891
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:47.892
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:47.893
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:47.893
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:50.118
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:50.144
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:50.474
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:50.527
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:50.604
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:50.637
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.046
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.046
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.047
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.047
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.179
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.214
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.363
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.375
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.779
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.781
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.781
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:51.782
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:52.403
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:52.446
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:52.635
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:52.679
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:52.734
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:52.747
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:52.931
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:52.973
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.047
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.069
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.464
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.465
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.465
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.466
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.684
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.696
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.869
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.879
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.933
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:53.980
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:54.151
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:54.161
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:54.365
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:54.374
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:54.448
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:54.493
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:54.901
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:54.902
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:54.903
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:54.903
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:55.900
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:55.954
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:56.359
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:56.363
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:56.419
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:56.419
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:56.603
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:56.606
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.019
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.020
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.020
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.021
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.221
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.280
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.445
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.499
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.615
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.653
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:57.989
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:58.035
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:58.207
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:58.251
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:58.336
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:58.340
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:58.746
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:58.800
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:59.210
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:59.211
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:59.211
+!MESSAGE 3 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:59.212
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:59.833
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:31:59.881
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:00.036
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:00.044
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:00.145
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:00.196
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:00.474
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:00.525
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:00.845
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:00.846
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:00.932
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:00.936
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:01.163
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:01.213
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:01.391
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:01.446
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:01.495
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:01.553
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:01.968
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:01.968
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:01.968
+!MESSAGE 3 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:01.969
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:02.478
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:02.589
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:02.636
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:02.934
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:03.347
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:03.347
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:03.348
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:03.348
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:03.893
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:04.304
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:04.305
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:04.305
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:04.306
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:05.648
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:05.678
+!MESSAGE Reconciled 1. Took 3 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:05.857
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:05.894
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.023
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.052
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.178
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.209
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.629
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.630
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.630
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.631
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.658
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.705
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.756
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.771
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.986
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:06.999
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:07.219
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:07.265
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:07.329
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:07.357
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:07.759
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:07.771
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:07.997
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:08.035
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:08.171
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:08.209
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:08.286
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:08.319
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:08.629
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:08.672
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:08.967
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:08.968
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:09.236
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:09.261
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:09.274
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:09.479
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:09.491
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:09.550
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:09.551
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:10.019
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:10.019
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:10.020
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:10.020
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:10.124
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:10.537
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:10.538
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:10.538
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:10.539
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:11.305
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:11.335
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:11.465
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:11.507
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:11.578
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:11.617
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:11.758
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:11.769
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:11.844
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:11.878
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:12.298
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:12.299
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:12.299
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:12.299
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:12.499
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:12.772
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:12.819
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:13.101
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:13.157
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:13.210
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:13.624
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:13.625
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:13.625
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:13.626
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:13.827
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:14.250
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:14.251
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:14.252
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:14.252
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:15.899
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.310
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.311
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.311
+!MESSAGE 3 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.313
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.401
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.474
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.551
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.622
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.698
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.785
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.816
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.919
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.952
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:16.986
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:17.059
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:17.082
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:17.113
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:17.145
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:17.335
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:17.465
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:17.881
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:17.881
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:17.882
+!MESSAGE 3 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:17.882
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:18.047
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:18.066
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:18.263
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:18.277
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:18.478
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:18.517
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:18.728
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:18.786
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:18.833
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.081
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.119
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.242
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.289
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.361
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.377
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.470
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.523
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.806
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.846
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.914
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:19.962
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:20.372
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:20.372
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:20.373
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:20.373
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:21.620
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:21.630
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:21.895
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:21.948
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:22.359
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:22.360
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:22.360
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:32:22.360
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:26.276
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:26.322
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:26.368
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:26.370
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:26.462
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:26.501
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:26.604
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:26.613
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:26.740
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:26.749
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:27.152
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:27.153
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:27.153
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:27.154
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:27.430
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:27.440
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:27.767
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:27.791
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:27.798
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:28.212
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:28.212
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:28.213
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:28.213
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:36.340
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:36.353
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:36.545
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:36.594
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:36.619
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:36.662
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:36.847
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:36.903
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:37.091
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:37.095
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:37.183
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:37.231
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:37.642
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:37.643
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:37.643
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:37.644
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:37.724
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:37.778
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.103
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.113
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.221
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.230
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.291
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.301
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.408
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.466
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.874
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.875
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.876
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:38.876
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:40.879
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:40.897
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:41.255
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:41.289
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:41.323
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:41.332
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:41.493
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:41.499
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:41.901
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:41.909
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:42.321
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:42.321
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:42.322
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:42.322
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:42.338
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:42.348
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:42.582
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:42.625
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:42.897
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:42.944
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:43.082
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:43.085
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:43.447
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:43.488
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:43.665
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:43.722
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:44.130
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:44.130
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:44.131
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:44.131
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.069
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.085
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.242
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.255
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.364
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.417
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.488
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.496
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.681
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.728
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.766
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.775
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.808
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.814
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:45.969
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:46.024
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:46.430
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:46.431
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:46.431
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:46.431
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:50.359
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:50.772
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:50.773
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:50.773
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:50.774
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:54.450
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:54.861
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:54.861
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:54.862
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:54.862
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:33:59.607
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:34:00.078
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:34:00.078
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:34:00.079
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:34:00.079
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:34:01.799
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:34:02.208
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:34:02.209
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:34:02.209
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:34:02.210
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:44.485
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:44.671
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:44.997
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:45.407
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:45.407
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:45.408
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:45.408
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:47.090
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:47.496
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:47.496
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:47.497
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:38:47.497
+!MESSAGE Validated 1. Took 5 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:00.967
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:00.982
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.117
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.164
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.355
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.424
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.465
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.592
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.600
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.721
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.739
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.778
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.824
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:01.949
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.003
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.088
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.128
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.213
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.270
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.312
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.320
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.711
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.721
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.769
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:02.814
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:03.225
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:03.225
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:03.226
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:03.226
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:03.454
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:03.860
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:03.861
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:03.861
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:03.861
+!MESSAGE Validated 1. Took 5 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:09.775
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:09.776
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:09.910
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:09.962
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.117
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.165
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.192
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.244
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.359
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.360
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.426
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.433
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.844
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.844
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.844
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:10.845
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:12.663
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:12.803
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:13.213
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:13.214
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:13.215
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:13.216
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:20.370
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:20.777
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:20.778
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:20.778
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:40:20.779
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:42:43.628
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:42:44.040
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:42:44.041
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:42:44.041
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:42:44.042
+!MESSAGE Validated 1. Took 5 ms
+!SESSION 2026-02-22 15:43:47.776 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AU
+Command-line arguments:  -data C:/repos/SENG4430/jdtls-data
+
+!ENTRY org.eclipse.core.resources 2 10035 2026-02-22 15:43:49.339
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:50.318
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:50.485
+!MESSAGE Started org.eclipse.buildship.core 99ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:50.487
+!MESSAGE Started org.eclipse.m2e.core 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:51.081
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:51.263
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:51.272
+!MESSAGE Initializing Java Language Server 1.50.0.202508151735
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.022
+!MESSAGE ProjectRegistryRefreshJob finished 2534ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.056
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.057
+!MESSAGE Non-Static Commands: [java.project.import, java.project.changeImportedProjects, java.navigate.openTypeHierarchy, java.project.resolveStackTraceLocation, java.edit.handlePasteEvent, java.edit.stringFormatting, java.project.getSettings, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.createModuleInfo, java.vm.getAllInstalls, java.edit.organizeImports, java.project.refreshDiagnostics, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.updateSettings, java.project.getAll, java.reloadBundles, java.project.isTestFile, java.project.resolveText, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.edit.smartSemicolonDetection, java.project.updateSourceAttachment, java.project.updateClassPaths, java.decompile, java.protobuf.generateSources, java.project.resolveSourceAttachment, java.project.updateJdk, java.project.addToSourcePath, java.completion.onDidSelect]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.088
+!MESSAGE RepositoryRegistryUpdateJob finished 1ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.116
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.193
+!MESSAGE Importing Maven project(s)
+
+!ENTRY org.eclipse.jdt.ls.core 4 0 2026-02-22 15:43:53.229
+!MESSAGE Failed to import projects
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:219)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:95)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:316)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:302)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.create(ProjectConfigurationManager.java:843)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.lambda$1(ProjectConfigurationManager.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.importProjects(ProjectConfigurationManager.java:139)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.importProjects(ProjectConfigurationManager.java:130)
+	at org.eclipse.jdt.ls.core.internal.managers.MavenProjectImporter.importToWorkspace(MavenProjectImporter.java:242)
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.importProjects(ProjectsManager.java:164)
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.initializeProjects(ProjectsManager.java:126)
+	at org.eclipse.jdt.ls.core.internal.handlers.InitHandler$1.runInWorkspace(InitHandler.java:263)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: OK
+Contains: C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2026-02-22 15:43:53.231
+!MESSAGE Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+!SUBENTRY 2 unknown 0 0 2026-02-22 15:43:53.231
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.core.resources 4 77 2026-02-22 15:43:53.231
+!MESSAGE C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+
+!ENTRY org.eclipse.jdt.ls.core 4 0 2026-02-22 15:43:53.232
+!MESSAGE Initialization failed 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to import projects
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.importProjects(ProjectsManager.java:177)
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.initializeProjects(ProjectsManager.java:126)
+	at org.eclipse.jdt.ls.core.internal.handlers.InitHandler$1.runInWorkspace(InitHandler.java:263)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+Contains: OK
+Contains: C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+!SUBENTRY 1 org.eclipse.jdt.ls.core 4 -1 2026-02-22 15:43:53.233
+!MESSAGE Failed to import projects
+!SUBENTRY 2 org.eclipse.core.resources 4 77 2026-02-22 15:43:53.233
+!MESSAGE Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+!SUBENTRY 3 unknown 0 0 2026-02-22 15:43:53.233
+!MESSAGE OK
+!SUBENTRY 3 org.eclipse.core.resources 4 77 2026-02-22 15:43:53.233
+!MESSAGE C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.238
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.488
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.489
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.500
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.501
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:53.502
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:54.003
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:54.177
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:54.556
+!MESSAGE Reconciled 1. Took 3 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:54.972
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:55.600
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:55.613
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:55.614
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:55.617
+!MESSAGE Validated 1. Took 37 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:55.915
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:55.951
+!MESSAGE Reconciled 1. Took 3 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:56.312
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:56.346
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:56.429
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:56.440
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:56.605
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:56.626
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:56.983
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.006
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.219
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.243
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.329
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.367
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.404
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.611
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.646
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.843
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.882
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.960
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:57.974
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:58.246
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:58.285
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:58.365
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:58.404
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:58.500
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:58.537
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.000
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.001
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.002
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.003
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.085
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.123
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.281
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.303
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.441
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.467
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.625
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.633
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.950
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:43:59.974
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:00.108
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:00.150
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:00.274
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:00.312
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:00.462
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:00.500
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:00.911
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:00.912
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:00.912
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:00.913
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:01.349
+!MESSAGE Reconciled 1. Took 3 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:01.721
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:01.749
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:01.939
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:02.349
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:02.350
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:02.350
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:02.350
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:02.819
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:03.241
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:03.242
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:03.243
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:03.244
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:04.425
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:04.841
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:04.843
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:04.844
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:04.845
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 4 0 2026-02-22 15:44:05.829
+!MESSAGE Document on language server is out-of-sync: PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:05.840
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:06.259
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:06.259
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:06.259
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:06.259
+!MESSAGE Validated 1. Took 6 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:11.380
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:11.789
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:11.789
+!MESSAGE 4 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:11.790
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:16.872
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:17.292
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:17.292
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:17.293
+!MESSAGE 5 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:17.293
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:20.007
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:20.429
+!MESSAGE begin problem for /Main.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:20.430
+!MESSAGE 1 problems reported for /Main.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:20.432
+!MESSAGE Validated 1. Took 22 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:45.703
+!MESSAGE Clearing problems for /Main.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:44:45.708
+!MESSAGE Clearing problems for /PomDependencyExtractor.java
+!SESSION 2026-02-22 15:45:07.807 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=21.0.7
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AU
+Command-line arguments:  -data C:/repos/SENG4430/jdtls-data
+
+!ENTRY org.eclipse.core.resources 2 10035 2026-02-22 15:45:09.188
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:10.129
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:10.270
+!MESSAGE Started org.eclipse.buildship.core 90ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:10.272
+!MESSAGE Started org.eclipse.m2e.core 2ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:10.859
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:10.967
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:10.972
+!MESSAGE Initializing Java Language Server 1.50.0.202508151735
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:12.632
+!MESSAGE ProjectRegistryRefreshJob finished 2359ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:12.665
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:12.666
+!MESSAGE Non-Static Commands: [java.project.import, java.project.changeImportedProjects, java.navigate.openTypeHierarchy, java.project.resolveStackTraceLocation, java.edit.handlePasteEvent, java.edit.stringFormatting, java.project.getSettings, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.createModuleInfo, java.vm.getAllInstalls, java.edit.organizeImports, java.project.refreshDiagnostics, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.updateSettings, java.project.getAll, java.reloadBundles, java.project.isTestFile, java.project.resolveText, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.edit.smartSemicolonDetection, java.project.updateSourceAttachment, java.project.updateClassPaths, java.decompile, java.protobuf.generateSources, java.project.resolveSourceAttachment, java.project.updateJdk, java.project.addToSourcePath, java.completion.onDidSelect]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:12.712
+!MESSAGE RepositoryRegistryUpdateJob finished 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:12.732
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:12.830
+!MESSAGE Importing Maven project(s)
+
+!ENTRY org.eclipse.jdt.ls.core 4 0 2026-02-22 15:45:12.869
+!MESSAGE Failed to import projects
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:219)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:95)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:316)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:302)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.create(ProjectConfigurationManager.java:843)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.lambda$1(ProjectConfigurationManager.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:458)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:339)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:278)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.importProjects(ProjectConfigurationManager.java:139)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.importProjects(ProjectConfigurationManager.java:130)
+	at org.eclipse.jdt.ls.core.internal.managers.MavenProjectImporter.importToWorkspace(MavenProjectImporter.java:242)
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.importProjects(ProjectsManager.java:164)
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.initializeProjects(ProjectsManager.java:126)
+	at org.eclipse.jdt.ls.core.internal.handlers.InitHandler$1.runInWorkspace(InitHandler.java:263)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: OK
+Contains: C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2026-02-22 15:45:12.870
+!MESSAGE Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+!SUBENTRY 2 unknown 0 0 2026-02-22 15:45:12.870
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.core.resources 4 77 2026-02-22 15:45:12.870
+!MESSAGE C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+
+!ENTRY org.eclipse.jdt.ls.core 4 0 2026-02-22 15:45:12.872
+!MESSAGE Initialization failed 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to import projects
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.importProjects(ProjectsManager.java:177)
+	at org.eclipse.jdt.ls.core.internal.managers.ProjectsManager.initializeProjects(ProjectsManager.java:126)
+	at org.eclipse.jdt.ls.core.internal.handlers.InitHandler$1.runInWorkspace(InitHandler.java:263)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Contains: Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+Contains: OK
+Contains: C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+!SUBENTRY 1 org.eclipse.jdt.ls.core 4 -1 2026-02-22 15:45:12.872
+!MESSAGE Failed to import projects
+!SUBENTRY 2 org.eclipse.core.resources 4 77 2026-02-22 15:45:12.872
+!MESSAGE Invalid project description for project 'src' at 'file:/C:/repos/SENG4430' 
+!SUBENTRY 3 unknown 0 0 2026-02-22 15:45:12.872
+!MESSAGE OK
+!SUBENTRY 3 org.eclipse.core.resources 4 77 2026-02-22 15:45:12.872
+!MESSAGE C:\repos\SENG4430 overlaps the workspace location: C:\repos\SENG4430\jdtls-data
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:12.880
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:13.080
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:13.081
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:13.089
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:13.090
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:13.091
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:13.691
+!MESSAGE Reconciled 2. Took 4 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:14.328
+!MESSAGE begin problem for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:14.342
+!MESSAGE The declared package "org.example" does not match the expected package "main.java.org.example" is of type PackageIsNotExpectedPackage
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:14.343
+!MESSAGE 2 problems reported for /PomDependencyExtractor.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:14.366
+!MESSAGE begin problem for /Main.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:14.367
+!MESSAGE 1 problems reported for /Main.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:14.368
+!MESSAGE Validated 2. Took 66 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:33.400
+!MESSAGE Clearing problems for /Main.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2026-02-22 15:45:33.408
+!MESSAGE Clearing problems for /PomDependencyExtractor.java

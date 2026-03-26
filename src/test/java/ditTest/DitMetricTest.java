@@ -2,7 +2,6 @@ package ditTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.github.javaparser.ast.CompilationUnit;
 import org.example.services.ProjectParser;
 import org.example.services.dit.DitMetric;
 import org.example.services.dit.DitResult;
@@ -11,7 +10,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.List;
 
 class DitMetricTest {
     @Test
@@ -22,7 +20,7 @@ class DitMetricTest {
         double dit = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
@@ -42,7 +40,7 @@ class DitMetricTest {
         double dit = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
@@ -64,7 +62,7 @@ class DitMetricTest {
         double dit = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
@@ -85,7 +83,7 @@ class DitMetricTest {
         double dit = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();
@@ -106,7 +104,7 @@ class DitMetricTest {
         double dit = 0;
 
         try {
-            MetricContext ctx = new MetricContext(parser.parseProject(testInputPath));
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
             DitMetric metric = new DitMetric();
             DitResult result = metric.compute(ctx);
             dit = result.getMeanDIT();

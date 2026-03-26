@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22982cdb-3285-46dd-90f5-f459577e8812" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/commands/DitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ditTest/DitMetricTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ditTest/DitMetricTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/IdLength/IdLengthResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/IdLength/IdLengthResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/IdLength/IdLengthMetricTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IdLength/IdLengthMetricTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/IdLength/singleClassExample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IdLength/singleClassExample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/QualityToolCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/QualityToolCLI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,18 +23,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JavaAutoRunManager">
-    <enabled-run-configurations>
-      <run-configuration type="JUnit" name="DitMetricTest.objectHasDepth0" />
-    </enabled-run-configurations>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -41,17 +43,31 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.ditTest.multiClassExample.Main.executor": "Run",
+    "JUnit.DitMetricTest.executor": "Debug",
+    "Application.Main.executor": "Debug",
+    "Application.ditTest.multiClassExample.Main.executor": "Debug",
     "JUnit.DitMetricTest.executor": "Run",
     "JUnit.DitMetricTest.multiClassExample.executor": "Run",
     "JUnit.DitMetricTest.objectHasDepth0.executor": "Debug",
     "JUnit.DitMetricTest.singleClassExample.executor": "Run",
+    "JUnit.IdLengthMetricTest.singleClassExample.executor": "Run",
+    "Maven.src [package].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "fix/dit-unit-tests",
+    "git-widget-placeholder": "feat/idlength-version-2",
+    "git-widget-placeholder": "feat/picocli-dit",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/mkr331/repo/mackenzieroddenby/SENG4430/src/test/java/ditTest"
+    "last_opened_file_path": "C:/repos/SENG4430",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -62,10 +78,12 @@
       <recent name="ditTest.multiClassExample" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DitMetricTest">
-    <configuration name="ditTest.multiClassExample.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ditTest.multiClassExample.Main" />
+  <component name="RunManager" selected="JUnit.IdLengthMetricTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="src" />
+      <option name="PROGRAM_PARAMETERS" value="all" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ditTest.multiClassExample.*" />
@@ -123,31 +141,63 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DitMetricTest.singleClassExample" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IdLengthMetricTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="src" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ditTest.*" />
+          <option name="PATTERN" value="IdLength.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ditTest" />
-      <option name="MAIN_CLASS_NAME" value="ditTest.DitMetricTest" />
+      <option name="PACKAGE_NAME" value="IdLength" />
+      <option name="MAIN_CLASS_NAME" value="IdLength.IdLengthMetricTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IdLengthMetricTest.singleClassExample" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="src" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="IdLength.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="IdLength" />
+      <option name="MAIN_CLASS_NAME" value="IdLength.IdLengthMetricTest" />
       <option name="METHOD_NAME" value="singleClassExample" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.DitMetricTest" />
+      <item itemvalue="JUnit.DitMetricTest.multiClassExample" />
+      <item itemvalue="JUnit.DitMetricTest.objectHasDepth0" />
+      <item itemvalue="JUnit.DitMetricTest.singleClassExample" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IdLengthMetricTest" />
+        <item itemvalue="JUnit.IdLengthMetricTest.singleClassExample" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DitMetricTest" />
         <item itemvalue="JUnit.DitMetricTest.objectHasDepth0" />
         <item itemvalue="JUnit.DitMetricTest.multiClassExample" />
-        <item itemvalue="Application.ditTest.multiClassExample.Main" />
         <item itemvalue="JUnit.DitMetricTest.singleClassExample" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -156,8 +206,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771215185800</updated>
+      <workItem from="1772621995166" duration="6007000" />
+      <workItem from="1772681218432" duration="1740000" />
+      <workItem from="1772682981193" duration="1919000" />
+      <workItem from="1772685047584" duration="11222000" />
+      <workItem from="1774094063940" duration="754000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -169,5 +227,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
