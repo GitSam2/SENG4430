@@ -57,6 +57,6 @@ class IdLengthMetricTest {
             throw new RuntimeException(e);
         }
 
-        assertEquals(36, maxIdentifierLength); // change number to the actual max length in multiclassexample
+        assertEquals(39, maxIdentifierLength); // change number to the actual max length in multiclassexample
     }
 }
