@@ -11,7 +11,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ComplexityVisitor extends VoidVisitorAdapter<AtomicInteger> {
     @Override
     public void visit(MethodDeclaration n, AtomicInteger complexity) {
-        complexity.set(1);
         super.visit(n, complexity);
     }
 
