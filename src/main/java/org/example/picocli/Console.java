@@ -1,4 +1,4 @@
-package org.example.utils;
+package org.example.picocli;
 
 import picocli.CommandLine.Help.Ansi;
 import picocli.CommandLine.Model.CommandSpec;
@@ -28,34 +28,75 @@ public class Console {
     }
 
     // Colour methods
-    public static String red    (String s) { return style("@|red "     + s + "|@"); }
-    public static String green  (String s) { return style("@|green "   + s + "|@"); }
-    public static String yellow (String s) { return style("@|yellow "  + s + "|@"); }
-    public static String blue   (String s) { return style("@|blue "    + s + "|@"); }
-    public static String magenta(String s) { return style("@|magenta " + s + "|@"); }
-    public static String cyan   (String s) { return style("@|cyan "    + s + "|@"); }
+    public static String red(String s) {
+        return style("@|red " + s + "|@");
+    }
+
+    public static String green(String s) {
+        return style("@|green " + s + "|@");
+    }
+
+    public static String yellow(String s) {
+        return style("@|yellow " + s + "|@");
+    }
+
+    public static String blue(String s) {
+        return style("@|blue " + s + "|@");
+    }
+
+    public static String magenta(String s) {
+        return style("@|magenta " + s + "|@");
+    }
+
+    public static String cyan(String s) {
+        return style("@|cyan " + s + "|@");
+    }
 
     // Styling methods
-    public static String bold     (String s) { return style("@|bold "      + s + "|@"); }
-    public static String italic   (String s) { return style("@|italic "    + s + "|@"); }
-    public static String underline(String s) { return style("@|underline " + s + "|@"); }
+    public static String bold(String s) {
+        return style("@|bold " + s + "|@");
+    }
+
+    public static String italic(String s) {
+        return style("@|italic " + s + "|@");
+    }
+
+    public static String underline(String s) {
+        return style("@|underline " + s + "|@");
+    }
 
     // Combination methods
-    public static String boldRed  (String s) { return style("@|bold,red "   + s + "|@"); }
-    public static String boldGreen(String s) { return style("@|bold,green " + s + "|@"); }
+    public static String boldRed(String s) {
+        return style("@|bold,red " + s + "|@");
+    }
+
+    public static String boldGreen(String s) {
+        return style("@|bold,green " + s + "|@");
+    }
 
     // Pre-formatted message types
-    public static void error  (String msg) { System.err.println(boldRed("✗ " + msg)); }
-    public static void success (String msg) { System.out.println(boldGreen("✓ " + msg)); }
-    public static void warn   (String msg) { System.out.println(yellow("⚠ " + msg)); }
-    public static void info   (String msg) { System.out.println(cyan("ℹ " + msg)); }
+    public static void error(String msg) {
+        System.err.println(boldRed("✗ " + msg));
+    }
+
+    public static void success(String msg) {
+        System.out.println(boldGreen("✓ " + msg));
+    }
+
+    public static void warn(String msg) {
+        System.out.println(yellow("⚠ " + msg));
+    }
+
+    public static void info(String msg) {
+        System.out.println(cyan("ℹ " + msg));
+    }
 
     /**
      * Render a table with styled headers and wrapped columns.
      *
-     * @param headers  Column header labels
-     * @param widths   Column widths in characters (should sum to <= terminalWidth())
-     * @param rows     Data rows; each String may contain @|...|@ markup
+     * @param headers Column header labels
+     * @param widths  Column widths in characters (should sum to <= terminalWidth())
+     * @param rows    Data rows; each String may contain @|...|@ markup
      */
     public static String table(String[] headers, int[] widths, String[][] rows) {
         StringBuilder sb = new StringBuilder();
@@ -65,7 +106,7 @@ public class Console {
         {
             StringBuilder rowBuilder = new StringBuilder();
             for (int width : widths) {
-                rowBuilder.append("%-").append(width-1).append("s|");
+                rowBuilder.append("%-").append(width - 1).append("s|");
             }
             rowBuilder.append("%n");
             rowPattern = rowBuilder.toString();
@@ -81,7 +122,7 @@ public class Console {
             // Shorten long cells to fit length
             int cellIndex = 0;
             for (int i = 0; i < row.length; i++) {
-                row[i] = ellipsis(row[i], widths[cellIndex]-1);
+                row[i] = ellipsis(row[i], widths[cellIndex] - 1);
             }
             sb.append(rowPattern.formatted((Object[]) row));
         }
@@ -95,7 +136,9 @@ public class Console {
     }
 
     /// Create a divider line of straight line
-    public static String divider() { return divider('─'); }
+    public static String divider() {
+        return divider('─');
+    }
 
     public static String header(String fmt, Object... args) {
         String result = "%n" + cyan(divider('=') + "%n" + fmt + "%n" + divider('='));

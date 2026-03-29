@@ -3,12 +3,18 @@ package org.example.services.wmc;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.example.services.Metric;
 import org.example.services.MetricContext;
 
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 
-public class WmcMetric {
+public class WmcMetric implements Metric<WmcResult> {
+
+    @Override
+    public String id() {
+        return "wmc";
+    }
 
     public WmcResult compute(MetricContext ctx) {
 

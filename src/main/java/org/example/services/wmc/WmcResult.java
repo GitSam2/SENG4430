@@ -2,7 +2,9 @@ package org.example.services.wmc;
 
 import java.util.List;
 
-public class WmcResult {
+import org.example.services.Result;
+
+public class WmcResult implements Result {
 
     private final List<Integer> wmcValues;
 
@@ -25,6 +27,7 @@ public class WmcResult {
         return (double) sum / wmcValues.size();
     }
 
+    @Override
     public String output() {
         return "Mean WMC: " + getMeanWMC();
     }
