@@ -1,10 +1,14 @@
 package org.example.services.NestedDepth;
 
-import com.github.javaparser.ast.CompilationUnit;
-import com.github.javaparser.ast.stmt.*;
-import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import org.example.services.Metric;
 import org.example.services.MetricContext;
+
+import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.stmt.DoStmt;
+import com.github.javaparser.ast.stmt.ForEachStmt;
+import com.github.javaparser.ast.stmt.ForStmt;
+import com.github.javaparser.ast.stmt.WhileStmt;
+import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
 public final class LoopDepthMetric implements Metric<LoopMetrics> {
 

@@ -2,8 +2,8 @@ package org.example.services.dependencies;
 
 import java.util.List;
 
+import org.example.picocli.Console;
 import org.example.services.Result;
-import org.example.utils.Console;
 
 public class DependencyResult implements Result {
     private final List<NodeResult> nodeResults;
@@ -19,11 +19,11 @@ public class DependencyResult implements Result {
     @Override
     public String output() {
         String[] headers = {
-            "Dependency",
-            "Transitive?",
-            "CVE?",
-            "CVSS Score",
-            "Fixed Version"
+                "Dependency",
+                "Transitive?",
+                "CVE?",
+                "CVSS Score",
+                "Fixed Version"
         };
 
         int[] widths = {
@@ -31,7 +31,7 @@ public class DependencyResult implements Result {
                 12,
                 5,
                 11,
-                14 
+                14
         };
 
         String[][] rows = new String[nodeResults.size()][headers.length];
@@ -48,13 +48,13 @@ public class DependencyResult implements Result {
                 } else {
                     rows[i][4] = Console.boldRed("None");
                 }
-                
+
             } else {
                 rows[i][2] = Console.boldGreen("No");
                 rows[i][3] = "N/A";
                 rows[i][4] = "N/A";
             }
-            
+
         }
 
         return Console.table(headers, widths, rows);

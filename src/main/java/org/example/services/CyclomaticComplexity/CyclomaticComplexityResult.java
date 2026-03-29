@@ -1,63 +1,57 @@
 package org.example.services.CyclomaticComplexity;
 
-public class CyclomaticComplexityResult {
-    public enum Severity {
-        ERROR,
-        WARNING,
-        INFO
+import java.util.List;
+
+import org.example.picocli.Console;
+import org.example.services.Result;
+
+public class CyclomaticComplexityResult implements Result {
+    private List<CyclomaticComplexityFileResult> fileResults;
+
+    // constructor
+    public CyclomaticComplexityResult(List<CyclomaticComplexityFileResult> fileResults) {
+        this.fileResults = fileResults;
     }
 
-    private String fileName;
-    private double averageScore;
-    private int highestScore;
-    private String highestName;
-    private Severity severity;
+    @Override
+    public String output() {
+        // Headers of the table columns
+        String[] headers = {
+                "File",
+                "Average",
+                "Highest Score",
+                "Severity"
+        };
 
-    public CyclomaticComplexityResult(String fileName, double averageScore, int highestScore, String highestName, Severity severity) {
-        this.fileName = fileName;
-        this.averageScore = averageScore;
-        this.highestScore = highestScore;
-        this.highestName = highestName;
-        this.severity = severity;
+        // Widths in characters of each column
+        // Currently terminal width with columns is determined by hand
+        int[] widths = {
+                Console.terminalWidth() - 31,
+                8,
+                14,
+                9
+        };
+
+        // Create a row X column table of cells below the header row
+        String[][] rows = new String[fileResults.size()][headers.length];
+        int rowIndex = 0;
+        for (CyclomaticComplexityFileResult cyclomaticComplexityFileResult : fileResults) {
+            rows[rowIndex][0] = cyclomaticComplexityFileResult.getFileName();
+            rows[rowIndex][1] = "%.1f".formatted(cyclomaticComplexityFileResult.getAverageScore());
+            rows[rowIndex][2] = String.valueOf(cyclomaticComplexityFileResult.getHighestScore());
+
+            switch (cyclomaticComplexityFileResult.getSeverity()) {
+                case INFO -> rows[rowIndex][3] = Console.cyan("INFO");
+                case WARNING -> rows[rowIndex][3] = Console.yellow("WARNING");
+                case ERROR -> {
+                    rows[rowIndex][3] = Console.boldRed("ERROR");
+                }
+            }
+
+            rowIndex++;
+        }
+
+        return (Console.table(headers, widths, rows));
     }
 
-    public double getAverageScore() {
-        return averageScore;
-    }
-
-    public void setAverageScore(double averageScore) {
-        this.averageScore = averageScore;
-    }
-
-    public int getHighestScore() {
-        return highestScore;
-    }
-
-    public void setHighestScore(int highestScore) {
-        this.highestScore = highestScore;
-    }
-
-    public String getHighestName() {
-        return highestName;
-    }
-
-    public void setHighestName(String highestName) {
-        this.highestName = highestName;
-    }
-
-    public Severity getSeverity() {
-        return severity;
-    }
-
-    public void setSeverity(Severity severity) {
-        this.severity = severity;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
 }
