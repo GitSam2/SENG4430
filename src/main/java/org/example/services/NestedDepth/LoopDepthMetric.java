@@ -18,38 +18,39 @@ public final class LoopDepthMetric implements Metric<LoopMetrics> {
 
         LoopMetrics metrics = new LoopMetrics();
 
-        VoidVisitorAdapter<Integer> visitor = new VoidVisitorAdapter<>() {
-
-            @Override
-            public void visit(ForStmt n, Integer depth) {
-                int newDepth = depth + 1;
-                metrics.record(newDepth);
-                super.visit(n, newDepth);
-            }
-
-            @Override
-            public void visit(ForEachStmt n, Integer depth) {
-                int newDepth = depth + 1;
-                metrics.record(newDepth);
-                super.visit(n, newDepth);
-            }
-
-            @Override
-            public void visit(WhileStmt n, Integer depth) {
-                int newDepth = depth + 1;
-                metrics.record(newDepth);
-                super.visit(n, newDepth);
-            }
-
-            @Override
-            public void visit(DoStmt n, Integer depth) {
-                int newDepth = depth + 1;
-                metrics.record(newDepth);
-                super.visit(n, newDepth);
-            }
-        };
-
         for (CompilationUnit cu : ctx.compilationUnits()) {
+            String fileName = cu.getStorage().map(storage -> storage.getFileName()).orElse("Unkown file");
+            VoidVisitorAdapter<Integer> visitor = new VoidVisitorAdapter<>() {
+
+                @Override
+                public void visit(ForStmt n, Integer depth) {
+                    int newDepth = depth + 1;
+                    metrics.record(newDepth, fileName);
+                    super.visit(n, newDepth);
+                }
+
+                @Override
+                public void visit(ForEachStmt n, Integer depth) {
+                    int newDepth = depth + 1;
+                    metrics.record(newDepth, fileName);
+                    super.visit(n, newDepth);
+                }
+
+                @Override
+                public void visit(WhileStmt n, Integer depth) {
+                    int newDepth = depth + 1;
+                    metrics.record(newDepth, fileName);
+                    super.visit(n, newDepth);
+                }
+
+                @Override
+                public void visit(DoStmt n, Integer depth) {
+                    int newDepth = depth + 1;
+                    metrics.record(newDepth, fileName);
+                    super.visit(n, newDepth);
+                }
+            };
+
             visitor.visit(cu, 0);
         }
 

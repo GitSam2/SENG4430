@@ -22,14 +22,27 @@ public class WmcMetric {
 
                 int methodCount = cls.getMethods().size();
 
-                System.out.println("Class: " + cls.getNameAsString()
-                        + " | WMC: " + methodCount);
-
+               /*  System.out.println("Class: " + cls.getNameAsString()
+                        + " | WMC: " + methodCount); */
+                
                 wmcValues.add(methodCount);
             }
         }
 
         return new WmcResult(wmcValues);
+    }
+    public List<String> computeStrings(MetricContext ctx){
+        List<String> resultStrings = new ArrayList<>();
+        for (CompilationUnit cu : ctx.compilationUnits()) {
+            List<ClassOrInterfaceDeclaration> classes = cu.findAll(ClassOrInterfaceDeclaration.class);
+            for (ClassOrInterfaceDeclaration cls : classes) {
+                int methodCount = cls.getMethods().size();
+                String line = "Class: " + cls.getNameAsString() + "| WMC: " + methodCount;
+                resultStrings.add(line);
+            }
+        }
+        return resultStrings;
+        
     }
 
 }

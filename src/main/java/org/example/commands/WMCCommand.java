@@ -1,10 +1,13 @@
 package org.example.commands;
 
+import java.util.*;
+
 import org.example.Main;
 import org.example.QualityToolCLI;
 import org.example.services.MetricContext;
 import org.example.services.wmc.WmcMetric;
 import org.example.services.wmc.WmcResult;
+import org.example.utils.Console;
 
 import picocli.CommandLine.*;
 
@@ -37,10 +40,29 @@ public class WMCCommand extends BaseMetricCommand {
         //============ Metric business logic ============
         MetricContext ctx = Main.ctx;
         WmcMetric metric = new WmcMetric();
+        List<String> lines = metric.computeStrings(ctx);
         WmcResult result = metric.compute(ctx);
+        
 
         //============ Display logic ============
-        System.out.println(result.output());
+       List<String[]> rowsList = new ArrayList<>();
+        for (String line : lines) {
+            String[] parts = line.split("\\|");
+            String className = parts[0].replace("Class:", "").trim();
+            String wmc = parts[1].replace("WMC:", "").trim();
+            rowsList.add(new String[] { className, wmc });
+        }
+
+        String[][] rows = rowsList.toArray(new String[0][]);
+        int maxClassLength = "class".length();
+        for (String[] row : rows){
+            maxClassLength = Math.max(maxClassLength, row[0].length());
+        }
+        String[] headers = { "Class", "WMC" };
+        int[] widths = { maxClassLength + 2, 10};
+        System.out.println(Console.table(headers, widths, rows));
+
+        System.out.println("Average WMC: "+ result.getMeanWMC());
         
         return 0;
     }

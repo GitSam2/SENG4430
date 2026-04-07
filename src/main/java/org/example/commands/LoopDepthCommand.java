@@ -6,6 +6,7 @@ import org.example.services.MetricContext;
 import org.example.services.NestedDepth.LoopDepthMetric;
 import org.example.services.NestedDepth.LoopMetrics;
 import org.example.utils.Console;
+import java.util.*;
 
 import picocli.CommandLine.*;
 
@@ -39,15 +40,35 @@ public class LoopDepthCommand extends BaseMetricCommand {
         MetricContext ctx = Main.ctx;
         LoopDepthMetric metric = new LoopDepthMetric();
         LoopMetrics result = metric.compute(ctx);
+        List<String> flaggedFiles = result.flaggedFiles;
 
         //============ Display logic ============
+        String max = flaggedFiles.get(0);
+        int length = max.length();
+        for(int i=0; i<flaggedFiles.size(); i++)
+        {
+            if(flaggedFiles.get(i).length() > length ){
+                length = flaggedFiles.get(i).length();
+            }
+        }
+
+        String[] headers =  {"Files that exceeded threshold"};
+        int[] width = {headers[0].length()+2};
+        String[][] rows = new String[flaggedFiles.size()][headers.length];
+        for (int i = 0; i < flaggedFiles.size(); i++) {
+            rows[i][0] = flaggedFiles.get(i);
+        }
+
         System.out.println("LOOP DEPTH ANALYSIS");
         System.out.println(Console.divider('─'));
-
-        System.out.println("# of loops: " + result.loopCount);
+        System.out.println("Number of flagged files: " + result.flaggedCount);
+        System.out.println(Console.divider('─'));
+        System.out.println(Console.table(headers, width, rows));
+        System.out.println(Console.divider('─'));
+        System.out.println("Total number of loops: " + result.loopCount);
         System.out.println("Max loop depth: " + result.maxDepth);
         System.out.println("Average loop depth: " + result.average());
-        System.out.println("Flagged loops: " + result.flaggedCount);
+
 
         if (result.flaggedCount > 0) {
             Console.error("Some loops exceeded the warning threshold!");
