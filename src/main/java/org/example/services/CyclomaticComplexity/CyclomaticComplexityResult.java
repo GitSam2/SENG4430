@@ -1,21 +1,25 @@
 package org.example.services.CyclomaticComplexity;
 
+import org.example.services.Result;
+import org.example.picocli.Console;
+
 import java.util.List;
 
-import org.example.picocli.Console;
-import org.example.services.Result;
-
 public class CyclomaticComplexityResult implements Result {
-    private List<CyclomaticComplexityFileResult> fileResults;
 
-    // constructor
-    public CyclomaticComplexityResult(List<CyclomaticComplexityFileResult> fileResults) {
-        this.fileResults = fileResults;
+    private final List<CCContext> result;
+    private boolean exceededThresholdResult = false;
+
+    private CCContext highestCCScoredFile;
+    private Double averageCCScore;
+
+    public CyclomaticComplexityResult(List<CCContext> result) {
+        this.result = result;
+        ResultAnalysis(result);
     }
 
     @Override
     public String output() {
-        // Headers of the table columns
         String[] headers = {
                 "File",
                 "Average",
@@ -33,25 +37,54 @@ public class CyclomaticComplexityResult implements Result {
         };
 
         // Create a row X column table of cells below the header row
-        String[][] rows = new String[fileResults.size()][headers.length];
+        String[][] rows = new String[result.size()][headers.length];
         int rowIndex = 0;
-        for (CyclomaticComplexityFileResult cyclomaticComplexityFileResult : fileResults) {
-            rows[rowIndex][0] = cyclomaticComplexityFileResult.getFileName();
-            rows[rowIndex][1] = "%.1f".formatted(cyclomaticComplexityFileResult.getAverageScore());
-            rows[rowIndex][2] = String.valueOf(cyclomaticComplexityFileResult.getHighestScore());
+        for (CCContext cyclomaticComplexityResult : result) {
+            rows[rowIndex][0] = cyclomaticComplexityResult.getFileName();
+            rows[rowIndex][1] = "%.1f".formatted(cyclomaticComplexityResult.getAverageScore());
+            rows[rowIndex][2] = String.valueOf(cyclomaticComplexityResult.getHighestScore());
 
-            switch (cyclomaticComplexityFileResult.getSeverity()) {
+            switch(cyclomaticComplexityResult.getSeverity()) {
                 case INFO -> rows[rowIndex][3] = Console.cyan("INFO");
                 case WARNING -> rows[rowIndex][3] = Console.yellow("WARNING");
                 case ERROR -> {
                     rows[rowIndex][3] = Console.boldRed("ERROR");
+                    exceededThresholdResult = true;
                 }
             }
 
             rowIndex++;
         }
-
-        return (Console.table(headers, widths, rows));
+        return Console.table(headers, widths, rows);
     }
 
+    public void ResultAnalysis(List<CCContext> result) {
+        averageCCScore = 0.0;
+        highestCCScoredFile = result.getFirst();
+        if (highestCCScoredFile ==null) {
+
+        }
+        for (CCContext file : result) {
+            assert highestCCScoredFile != null;
+            if (file.getHighestScore() > highestCCScoredFile.getHighestScore()) {
+                highestCCScoredFile = file;
+            }
+            if (!file.getAverageScore().isNaN()) {
+                averageCCScore +=file.getAverageScore();
+            }
+        }
+        averageCCScore = averageCCScore / result.size();
+    }
+
+    public Double getAverageCCScore() {
+        return averageCCScore;
+    }
+
+    public CCContext getHighestCCScoredFile() {
+        return highestCCScoredFile;
+    }
+
+    public boolean isExceededThresholdResult() {
+        return exceededThresholdResult;
+    }
 }

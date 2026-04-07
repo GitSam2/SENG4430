@@ -1,6 +1,6 @@
 package org.example.services.CyclomaticComplexity;
 
-public class CyclomaticComplexityFileResult {
+public class CCContext {
     public enum Severity {
         ERROR,
         WARNING,
@@ -8,13 +8,12 @@ public class CyclomaticComplexityFileResult {
     }
 
     private String fileName;
-    private double averageScore;
+    private Double averageScore;
     private int highestScore;
     private String highestName;
-    private Severity severity;
+    private CCContext.Severity severity;
 
-    public CyclomaticComplexityFileResult(String fileName, double averageScore, int highestScore, String highestName,
-            Severity severity) {
+    public CCContext(String fileName, Double averageScore, int highestScore, String highestName, Severity severity) {
         this.fileName = fileName;
         this.averageScore = averageScore;
         this.highestScore = highestScore;
@@ -22,7 +21,8 @@ public class CyclomaticComplexityFileResult {
         this.severity = severity;
     }
 
-    public double getAverageScore() {
+    // Getters and Setters
+    public Double getAverageScore() {
         return averageScore;
     }
 
@@ -46,11 +46,11 @@ public class CyclomaticComplexityFileResult {
         this.highestName = highestName;
     }
 
-    public Severity getSeverity() {
+    public CCContext.Severity getSeverity() {
         return severity;
     }
 
-    public void setSeverity(Severity severity) {
+    public void setSeverity(CCContext.Severity severity) {
         this.severity = severity;
     }
 
@@ -61,5 +61,4 @@ public class CyclomaticComplexityFileResult {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
-
 }
