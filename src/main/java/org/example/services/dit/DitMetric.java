@@ -15,7 +15,7 @@ import com.github.javaparser.ast.CompilationUnit;
 public final class DitMetric implements Metric<DitResult> {
     @Override
     public String id() {
-        return "DIT";
+        return "Depth of Inheritance Tree";
     }
 
     @Override

@@ -1,9 +1,11 @@
 package org.example.services.NestedDepth;
 
 import java.util.ArrayList;
-import java.util.*;
+import java.util.List;
 
-public class LoopMetrics {
+import org.example.services.Result;
+
+public class LoopMetrics implements Result {
     public int maxDepth = 0;
     public int minDepth = Integer.MAX_VALUE;
     public int totalDepth = 0;
@@ -16,10 +18,19 @@ public class LoopMetrics {
         totalDepth += depth;
         maxDepth = Math.max(maxDepth, depth);
         minDepth = Math.min(minDepth, depth);
-        if (depth > 6){flaggedCount++; flaggedFiles.add(filename);}
+        if (depth > 6) {
+            flaggedCount++;
+            flaggedFiles.add(filename);
+        }
     }
 
     public double average() {
         return loopCount == 0 ? 0 : (double) totalDepth / loopCount;
+    }
+
+    @Override
+    public String output() {
+        return String.format("Max Depth: %d, Min Depth: %d, Average Depth: %.2f, Loop Count: %d, Flagged Count: %d",
+                maxDepth, minDepth, average(), loopCount, flaggedCount);
     }
 }

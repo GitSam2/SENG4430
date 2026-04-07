@@ -9,11 +9,11 @@ import org.apache.maven.artifact.versioning.ComparableVersion;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.graph.DependencyNode;
+import org.example.picocli.Console;
 import org.example.services.Metric;
 import org.example.services.MetricContext;
-import org.example.utils.Console;
 
-public class DependencyMetric implements Metric<DependencyResult>{
+public class DependencyMetric implements Metric<DependencyResult> {
     public volatile boolean bootstrapping = false;
     public volatile boolean resolving = false;
     public volatile boolean fetchingCves = false;
@@ -63,22 +63,26 @@ public class DependencyMetric implements Metric<DependencyResult>{
             }
         }
 
-        DependencyResult result = new DependencyResult(nodeResults); // Placeholder, should be populated with actual results from nodeVisitor
+        DependencyResult result = new DependencyResult(nodeResults); // Placeholder, should be populated with actual
+                                                                     // results from nodeVisitor
 
         return result;
     }
 
-    private List<NodeResult> nodeVisitor(DependencyNode node, boolean isDirectDependency) throws IOException, InterruptedException {
+    private List<NodeResult> nodeVisitor(DependencyNode node, boolean isDirectDependency)
+            throws IOException, InterruptedException {
         CveService cveService = new CveService();
         List<NodeResult> results = new ArrayList<>();
-        
-        List<CveInfo> cveInfos = cveService.fetchCves(new DependencyModel(node.getArtifact().getArtifactId(), node.getArtifact().getGroupId(), node.getArtifact().getVersion()));
+
+        List<CveInfo> cveInfos = cveService.fetchCves(new DependencyModel(node.getArtifact().getArtifactId(),
+                node.getArtifact().getGroupId(), node.getArtifact().getVersion()));
 
         boolean hasCve = !cveInfos.isEmpty();
         String fixedVersion = fixedVersion(cveInfos);
         double severity = severity(cveInfos);
 
-        NodeResult result = new NodeResult(node.getArtifact().getArtifactId() + ":" + node.getArtifact().getVersion(), isDirectDependency, hasCve, severity, fixedVersion);
+        NodeResult result = new NodeResult(node.getArtifact().getArtifactId() + ":" + node.getArtifact().getVersion(),
+                isDirectDependency, hasCve, severity, fixedVersion);
         results.add(result);
 
         for (DependencyNode child : node.getChildren()) {
