@@ -19,10 +19,12 @@ public class WmcMetric implements Metric<WmcResult> {
     public WmcResult compute(MetricContext ctx) {
 
         List<Integer> wmcValues = new ArrayList<>();
+        List<ClassOrInterfaceDeclaration> classList = new ArrayList();
+
 
         for (CompilationUnit cu : ctx.compilationUnits()) {
 
-            List<ClassOrInterfaceDeclaration> classes = cu.findAll(ClassOrInterfaceDeclaration.class);
+        List<ClassOrInterfaceDeclaration> classes = cu.findAll(ClassOrInterfaceDeclaration.class);
 
             for (ClassOrInterfaceDeclaration cls : classes) {
 
@@ -30,12 +32,12 @@ public class WmcMetric implements Metric<WmcResult> {
 
                /*  System.out.println("Class: " + cls.getNameAsString()
                         + " | WMC: " + methodCount); */
-                
                 wmcValues.add(methodCount);
+                classList.add(cls);
             }
         }
 
-        return new WmcResult(wmcValues);
+        return new WmcResult(wmcValues, classList);
     }
     public List<String> computeStrings(MetricContext ctx){
         List<String> resultStrings = new ArrayList<>();
