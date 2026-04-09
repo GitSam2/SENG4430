@@ -25,6 +25,7 @@ class staticClasses {
             System.out.println("Enter two numbers");
             x1 = sc.nextInt();
             y1 = sc.nextInt();
+            sc.close();
             met(x1, y1);
             System.out.println("Sum of the 2 numbers-" + s);
         }

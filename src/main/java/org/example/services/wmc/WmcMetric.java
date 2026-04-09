@@ -19,7 +19,7 @@ public class WmcMetric implements Metric<WmcResult> {
     public WmcResult compute(MetricContext ctx) {
 
         List<Integer> wmcValues = new ArrayList<>();
-        List<ClassOrInterfaceDeclaration> classList = new ArrayList();
+        List<ClassOrInterfaceDeclaration> classList = new ArrayList<>();
 
 
         for (CompilationUnit cu : ctx.compilationUnits()) {
