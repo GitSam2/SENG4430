@@ -1,5 +1,7 @@
 package org.example.picocli;
 
+import java.util.concurrent.Callable;
+
 import org.example.QualityToolApp;
 import org.example.services.Metric;
 import org.example.services.MetricFactory;
@@ -11,7 +13,7 @@ import picocli.CommandLine.Command;
     * Each metric is registered as a direct subcommand on the root (e.g. qualitytool cc -p ...)
 */
 @Command
-public class MetricCommand implements Runnable {
+public class MetricCommand implements Callable<Integer> {
     private final String metricName;
 
     public MetricCommand(String metricName) {
@@ -19,13 +21,13 @@ public class MetricCommand implements Runnable {
     }
 
     @Override
-    public void run() {
+    public Integer call() {
         // Based on the metricName, we can get the corresponding metric object and
         // execute it
         Metric<?> metric = MetricFactory.getMetric(metricName);
         if (metric == null) {
             Console.error("Unknown metric: " + metricName);
-            return;
+            return 1;
         }
 
         // start up
@@ -33,8 +35,7 @@ public class MetricCommand implements Runnable {
         System.out.println(Console.divider('─'));
 
         // Run the metric and display results
-        runMetric(metric);
-
+        return runMetric(metric);
     }
 
     private Integer runMetric(Metric<?> metric) {

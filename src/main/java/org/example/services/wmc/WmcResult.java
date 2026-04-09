@@ -36,7 +36,7 @@ public class WmcResult implements Result {
 
     public List<String> getClasses(List<ClassOrInterfaceDeclaration> wmcClassList)
     {
-        List<String> classString = new ArrayList();
+        List<String> classString = new ArrayList<>();
         for(ClassOrInterfaceDeclaration cls : wmcClassList)
         {
             classString.add(cls.getNameAsString());

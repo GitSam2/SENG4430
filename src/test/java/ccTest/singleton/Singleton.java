@@ -13,7 +13,7 @@ class Singleton {
     // here a private constructor is used
 
     // Method
-    public static Singleton Singleton()
+    public static Singleton getInstance()
     {
         if (single_instance == null) {
             single_instance = new Singleton();
