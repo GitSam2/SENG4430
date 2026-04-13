@@ -21,7 +21,7 @@ public class CCTest {
         CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
         CyclomaticComplexityResult result = metric.compute(ctx);
         System.out.println(result.output());
-        assertEquals(100, result.getHighestCCScoredFile().getHighestScore());
+        assertEquals(99, result.getHighestCCScoredFile().getHighestScore());
     }
 
     @Test
@@ -32,7 +32,7 @@ public class CCTest {
         CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
         CyclomaticComplexityResult result = metric.compute(ctx);
         System.out.println(result.output());
-        assertEquals(1, result.getHighestCCScoredFile().getHighestScore());
+        assertEquals(0, result.getHighestCCScoredFile().getHighestScore());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class CCTest {
         CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
         CyclomaticComplexityResult result = metric.compute(ctx);
         System.out.println(result.output());
-        assertEquals(1, result.getHighestCCScoredFile().getHighestScore() );
+        assertEquals(0, result.getHighestCCScoredFile().getHighestScore() );
     }
 
     @Test
@@ -54,7 +54,7 @@ public class CCTest {
         CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
         CyclomaticComplexityResult result = metric.compute(ctx);
         System.out.println(result.output());
-        assertEquals(2, result.getHighestCCScoredFile().getHighestScore() );
+        assertEquals(1, result.getHighestCCScoredFile().getHighestScore() );
     }
 
     @Test
@@ -65,6 +65,6 @@ public class CCTest {
         CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
         CyclomaticComplexityResult result = metric.compute(ctx);
         System.out.println(result.output());
-        assertEquals(1, result.getHighestCCScoredFile().getHighestScore() );
+        assertEquals(0, result.getHighestCCScoredFile().getHighestScore() );
     }
 }

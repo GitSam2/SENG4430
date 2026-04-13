@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 import org.apache.maven.artifact.versioning.ComparableVersion;
 import org.eclipse.aether.RepositorySystem;
@@ -25,46 +27,46 @@ public class DependencyMetric implements Metric<DependencyResult> {
 
     @Override
     public DependencyResult compute(MetricContext ctx) {
-        bootstrapping = true;
-        // Bootstrap the repo
-        RepositorySystem repositorySystem = MavenBootstrap.newRepositorySystem();
-        RepositorySystemSession repositorySystemSession = MavenBootstrap.newSession(repositorySystem);
+         // Kick off compute in a background thread
+        CompletableFuture<DependencyResult> future = CompletableFuture.supplyAsync(() -> computeResult(ctx));
 
-        resolving = true;
-        // Resolve the dependency tree
-        DependencyTreeResolver resolver = new DependencyTreeResolver(repositorySystem, repositorySystemSession);
-        Path projectPath = ctx.getProjectPath();
+        // Render loop on the main thread
+        int tick = 0;
+        String[] throbber = { "|", "/", "-", "\\" };
 
-        Path pomPath = projectPath.resolve("pom.xml");
-        if (!pomPath.toFile().exists()) {
-            Console.error("Project did not contain a pom.xml file");
-            return null;
-        }
+        while (!future.isDone()) {
+            String spinner = throbber[tick % throbber.length];
+            String status  = getStatus();
 
-        fetchingCves = true;
+            // \r rewrites the current line in a TUI
+            System.out.print("\r" + spinner + "  " + status + "   ");
+            System.out.flush();
 
-        // Fetch CVE information for dependencies
-        List<DependencyTree> trees = null;
-        try {
-            trees = resolver.resolvePom(pomPath.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-            Console.error("Project did not contain a pom.xml file or it could not be resolved");
-            return null;
-        }
-
-        List<NodeResult> nodeResults = new ArrayList<>();
-        for (DependencyTree tree : trees) {
+            tick++;
             try {
-                nodeResults.addAll(nodeVisitor(tree.root(), true));
-            } catch (IOException | InterruptedException e) {
-                Console.error("Could not fetch CVE information for dependencies.");
-                return null;
+                Thread.sleep(100); // poll every 100ms
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
             }
         }
 
-        DependencyResult result = new DependencyResult(nodeResults); // Placeholder, should be populated with actual
-                                                                     // results from nodeVisitor
+        DependencyResult result = null;
+        try {
+            result = future.get();
+        } catch (InterruptedException | ExecutionException e) {
+            Console.error("An error occurred while computing the dependency metric.");
+        }
+
+        // TODO: move description somewhere else, this is just for testing
+        System.out.print("\r");
+        System.out.flush();
+        if (result != null) {
+            System.out.println(Console.bold("Transitive") + " dependencies are dependencies that are not directly included in the pom.xml but are dependencies of the direct dependencies.\n");
+            System.out.println(Console.bold("CVE") + " stands for Common Vulnerabilities and Exposures. CVEs are publicly disclosed cybersecurity vulnerabilities.\n");
+            System.out.println(Console.bold("CVSS Score") + " stands for Common Vulnerability Scoring System. A standardised score (from 0 to 10) that indicates the severity of a CVE. A higher score indicates a more severe vulnerability.\n");
+            System.out.println(Console.divider('─'));
+        }
 
         return result;
     }
@@ -119,5 +121,58 @@ public class DependencyMetric implements Metric<DependencyResult> {
             }
         }
         return maxSeverity;
+    }
+
+    private DependencyResult computeResult(MetricContext ctx) {
+        bootstrapping = true;
+        // Bootstrap the repo
+        RepositorySystem repositorySystem = MavenBootstrap.newRepositorySystem();
+        RepositorySystemSession repositorySystemSession = MavenBootstrap.newSession(repositorySystem);
+
+        resolving = true;
+        // Resolve the dependency tree
+        DependencyTreeResolver resolver = new DependencyTreeResolver(repositorySystem, repositorySystemSession);
+        Path projectPath = ctx.getProjectPath();
+
+        Path pomPath = projectPath.resolve("pom.xml");
+        if (!pomPath.toFile().exists()) {
+            Console.error("Project did not contain a pom.xml file");
+            return null;
+        }
+
+        fetchingCves = true;
+
+        // Fetch CVE information for dependencies
+        List<DependencyTree> trees = null;
+        try {
+            trees = resolver.resolvePom(pomPath.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+            Console.error("Project did not contain a pom.xml file or it could not be resolved");
+            return null;
+        }
+
+        List<NodeResult> nodeResults = new ArrayList<>();
+        for (DependencyTree tree : trees) {
+            try {
+                nodeResults.addAll(nodeVisitor(tree.root(), true));
+            } catch (IOException | InterruptedException e) {
+                Console.error("Could not fetch CVE information for dependencies.");
+                return null;
+            }
+        }
+
+        DependencyResult result = new DependencyResult(nodeResults); // Placeholder, should be populated with actual
+                                                                     // results from nodeVisitor
+
+        return result;
+    }
+
+    private String getStatus() {
+        if (fetchingCves)       return "Fetching CVE information for dependencies...";
+        if (resolving)          return "Resolving dependency tree...";
+        if (bootstrapping)      return "Bootstrapping maven...";
+        
+        return "Starting...";
     }
 }

@@ -120,9 +120,8 @@ public class Console {
         // Print body of table
         for (String[] row : rows) {
             // Shorten long cells to fit length
-            int cellIndex = 0;
             for (int i = 0; i < row.length; i++) {
-                row[i] = ellipsis(row[i], widths[cellIndex] - 1);
+                row[i] = ellipsis(row[i], widths[i] - 1);
             }
             sb.append(rowPattern.formatted((Object[]) row));
         }
@@ -149,7 +148,6 @@ public class Console {
         if (text.length() > length) {
             return text.substring(0, length - 3) + "...";
         }
-
         return text;
     }
 }

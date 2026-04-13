@@ -19,23 +19,38 @@ public class WmcMetric implements Metric<WmcResult> {
     public WmcResult compute(MetricContext ctx) {
 
         List<Integer> wmcValues = new ArrayList<>();
+        List<ClassOrInterfaceDeclaration> classList = new ArrayList<>();
+
 
         for (CompilationUnit cu : ctx.compilationUnits()) {
 
-            List<ClassOrInterfaceDeclaration> classes = cu.findAll(ClassOrInterfaceDeclaration.class);
+        List<ClassOrInterfaceDeclaration> classes = cu.findAll(ClassOrInterfaceDeclaration.class);
 
             for (ClassOrInterfaceDeclaration cls : classes) {
 
                 int methodCount = cls.getMethods().size();
 
-                System.out.println("Class: " + cls.getNameAsString()
-                        + " | WMC: " + methodCount);
-
+               /*  System.out.println("Class: " + cls.getNameAsString()
+                        + " | WMC: " + methodCount); */
                 wmcValues.add(methodCount);
+                classList.add(cls);
             }
         }
 
-        return new WmcResult(wmcValues);
+        return new WmcResult(wmcValues, classList);
+    }
+    public List<String> computeStrings(MetricContext ctx){
+        List<String> resultStrings = new ArrayList<>();
+        for (CompilationUnit cu : ctx.compilationUnits()) {
+            List<ClassOrInterfaceDeclaration> classes = cu.findAll(ClassOrInterfaceDeclaration.class);
+            for (ClassOrInterfaceDeclaration cls : classes) {
+                int methodCount = cls.getMethods().size();
+                String line = "Class: " + cls.getNameAsString() + "| WMC: " + methodCount;
+                resultStrings.add(line);
+            }
+        }
+        return resultStrings;
+        
     }
 
 }
