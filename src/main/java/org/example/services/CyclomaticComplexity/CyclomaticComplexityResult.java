@@ -55,14 +55,17 @@ public class CyclomaticComplexityResult implements Result {
 
             rowIndex++;
         }
-        return Console.table(headers, widths, rows);
+        String metricDescription = "Cyclomatic Complexity Metric \nSeverity guide: \nINFO: score <= 10 -> Acceptable \nWARNING: 15 >= score > 10 \nERROR: score < 15\n";
+        String projectAnalysis = "\nProject Analysis: \nTotal file: "+ result.size() + "\nHighest Score: " + highestCCScoredFile.getHighestScore() + "\nAverage Score: " + getAverageCCScore()+ "\n";
+        return metricDescription + Console.table(headers, widths, rows) + projectAnalysis;
     }
 
     public void ResultAnalysis(List<CCContext> result) {
         averageCCScore = 0.0;
         highestCCScoredFile = result.getFirst();
         if (highestCCScoredFile ==null) {
-
+            System.out.println("No file found, please try running the command again");
+            return;
         }
         for (CCContext file : result) {
             assert highestCCScoredFile != null;

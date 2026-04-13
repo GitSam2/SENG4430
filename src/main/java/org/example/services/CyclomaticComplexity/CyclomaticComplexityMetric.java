@@ -15,7 +15,7 @@ public class CyclomaticComplexityMetric implements Metric<CyclomaticComplexityRe
 
     public CyclomaticComplexityMetric() {
         this.warning = 10;
-        this.severe = 10;
+        this.severe = 15;
     }
 
     @Override
