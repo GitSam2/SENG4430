@@ -12,6 +12,7 @@ import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
 public final class LoopDepthMetric implements Metric<LoopMetrics> {
 
+    public static int fileCount = 0;
     @Override
     public String id() {
         return "loop-depth";
@@ -24,33 +25,38 @@ public final class LoopDepthMetric implements Metric<LoopMetrics> {
 
         for (CompilationUnit cu : ctx.compilationUnits()) {
             String fileName = cu.getStorage().map(storage -> storage.getFileName()).orElse("Unkown file");
+            fileCount++;
             VoidVisitorAdapter<Integer> visitor = new VoidVisitorAdapter<>() {
 
                 @Override
                 public void visit(ForStmt n, Integer depth) {
                     int newDepth = depth + 1;
-                    metrics.record(newDepth, fileName);
+                    boolean isFlagged = (newDepth >= 3 && depth < 3);
+                    metrics.record(newDepth, fileName, isFlagged);
                     super.visit(n, newDepth);
                 }
 
                 @Override
                 public void visit(ForEachStmt n, Integer depth) {
                     int newDepth = depth + 1;
-                    metrics.record(newDepth, fileName);
+                    boolean isFlagged = (newDepth >= 3 && depth < 3);
+                    metrics.record(newDepth, fileName, isFlagged);
                     super.visit(n, newDepth);
                 }
 
                 @Override
                 public void visit(WhileStmt n, Integer depth) {
                     int newDepth = depth + 1;
-                    metrics.record(newDepth, fileName);
+                    boolean isFlagged = (newDepth >= 3 && depth < 3);
+                    metrics.record(newDepth, fileName, isFlagged);
                     super.visit(n, newDepth);
                 }
 
                 @Override
                 public void visit(DoStmt n, Integer depth) {
                     int newDepth = depth + 1;
-                    metrics.record(newDepth, fileName);
+                    boolean isFlagged = (newDepth >= 3 && depth < 3);
+                    metrics.record(newDepth, fileName, isFlagged);
                     super.visit(n, newDepth);
                 }
             };

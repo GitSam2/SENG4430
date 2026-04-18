@@ -15,12 +15,12 @@ public class LoopMetrics implements Result {
     public int flaggedCount = 0;
     public List<String> flaggedFiles = new ArrayList<>();
 
-    void record(int depth, String filename) {
+    void record(int depth, String filename, boolean isFlagged) {
         loopCount++;
         totalDepth += depth;
         maxDepth = Math.max(maxDepth, depth);
         minDepth = Math.min(minDepth, depth);
-        if (depth > 6) {
+        if (isFlagged) {
             flaggedCount++;
             flaggedFiles.add(filename);
         }
@@ -33,45 +33,45 @@ public class LoopMetrics implements Result {
     @Override
     public String output() 
     {
-        String max = flaggedFiles.get(0);
-        int length = max.length();
-        for(int i=0; i<flaggedFiles.size(); i++)
+        if(flaggedCount > 0)
         {
-            if(flaggedFiles.get(i).length() > length ){
-                length = flaggedFiles.get(i).length();
+            String max = flaggedFiles.get(0);
+            int length = max.length();
+            for(int i=0; i<flaggedFiles.size(); i++)
+            {
+                if(flaggedFiles.get(i).length() > length ){
+                    length = flaggedFiles.get(i).length();
+                }
             }
-        }
 
-        String[] headers =  {"Files that exceeded threshold"};
-        int[] width = {headers[0].length()+2};
-        String[][] rows = new String[flaggedFiles.size()][headers.length];
-        for (int i = 0; i < flaggedFiles.size(); i++) {
-            rows[i][0] = flaggedFiles.get(i);
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.format(Console.divider('-')));
-        sb.append(String.format("\nLOOP DEPTH ANALYSIS \n"));
-        sb.append(String.format(Console.divider('-')));
-        sb.append(String.format("\nNested Loops That Exceed A Depth Of 6 Are Considered A Code Smell And Are Flagged \n"));
-        sb.append(String.format(Console.divider('-')));
-        sb.append(String.format("\nNumber of flagged files: " + flaggedCount + "\n"));
-        sb.append(String.format("Total number of loops: " + loopCount + "\n"));
-        sb.append(String.format("Max loop depth: " + maxDepth + "\n"));
-        sb.append(String.format("Average loop depth: " + average() + "\n"));
+            String[] headers =  {"Files that exceeded threshold"};
+            int[] width = {headers[0].length()+2};
+            String[][] rows = new String[flaggedFiles.size()][headers.length];
+            for (int i = 0; i < flaggedFiles.size(); i++) {
+                rows[i][0] = flaggedFiles.get(i);
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.append(String.format(Console.divider('-')));
+            sb.append(String.format("\nLOOP DEPTH ANALYSIS \n"));
+            sb.append(String.format(Console.divider('-')));
+            sb.append(String.format("\nNested Loops That Exceed A Depth Of 3 Are Considered A Code Smell And Are Flagged \n"));
+            sb.append(String.format(Console.divider('-')));
+            sb.append(String.format("\nNumber of files checked: " + LoopDepthMetric.fileCount + "\n"));
+            sb.append(String.format("Number of flagged files: " + flaggedCount + "\n"));
+            sb.append(String.format("Total number of loops: " + loopCount + "\n"));
+            sb.append(String.format("Max loop depth: " + maxDepth + "\n"));
+            sb.append(String.format("Average loop depth: " + average() + "\n"));
 
-
-        if (flaggedCount > 0) {
-            Console.error("Some loops exceeded the warning threshold!");
+            sb.append(String.format(Console.divider('─')));
+            sb.append(String.format("\n"));
+            sb.append(String.format(Console.table(headers, width, rows)));
+            return sb.toString();
         }
         else
         {
-            Console.success("No flagged loops");
-
+            Console.success("No flagged Loops");
+            return "Number of files checked: " + LoopDepthMetric.fileCount;
         }
-        sb.append(String.format(Console.divider('─')));
-        sb.append(String.format("\n"));
-        sb.append(String.format(Console.table(headers, width, rows)));
-        return sb.toString();
 
     }
 }
