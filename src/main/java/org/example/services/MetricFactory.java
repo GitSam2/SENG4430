@@ -1,7 +1,6 @@
 package org.example.services;
 
 import java.util.List;
-import java.util.concurrent.Callable;
 
 import org.example.picocli.MetricCommand;
 
@@ -11,10 +10,6 @@ import org.example.picocli.MetricCommand;
  * metrics with unique CLI options should use a dedicated command class instead of MetricCommand.
  */
 public class MetricFactory {
-
-    public record MetricEntry(String name, Metric<?> metric, Callable<Integer> command) {
-    }
-
     public static List<MetricEntry> all() {
         return List.of(
                 new MetricEntry("dit", new org.example.services.dit.DitMetric(), new MetricCommand("dit")),
@@ -36,7 +31,7 @@ public class MetricFactory {
      */
     public static Metric<?> getMetric(String metricName) {
         List<MetricEntry> entries = all();
-        for (var entry : entries) {
+        for (MetricEntry entry : entries) {
             if (entry.name().equals(metricName)) {
                 return entry.metric();
             }
