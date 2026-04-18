@@ -25,7 +25,13 @@ public class DitResult implements Result {
     int warnThreshold;
     int failThreshold;
 
-    // constructor
+    /**
+     * Constructor for DitResult
+     * 
+     * @param classes       the map of class names to their DIT values
+     * @param warnThreshold the threshold for warning
+     * @param failThreshold the threshold for failure
+     */
     public DitResult(Map<String, Integer> classes, int warnThreshold, int failThreshold) {
         this.classes = classes;
         this.warnThreshold = warnThreshold;
@@ -36,6 +42,9 @@ public class DitResult implements Result {
     @Override
     public String output() {
         StringBuilder sb = new StringBuilder();
+        sb.append(
+                "DIT is used assess how much a class inherits functionaliy. A high DIT can indicate a complex class hierarchy that may be difficult to understand and maintain.");
+        sb.append(System.lineSeparator());
         sb.append(String.format("Classes analysed : %,d%n", noAnalysedClasses));
         sb.append(String.format("Max DIT          : %d%n", maxDIT));
         sb.append(String.format("Mean DIT         : %.1f%n", meanDIT));
@@ -73,36 +82,13 @@ public class DitResult implements Result {
         return sb.toString();
     }
 
-    // getters
-    public int getMaxDIT() {
-        return maxDIT;
-    }
-
-    public double getMeanDIT() {
-        return meanDIT;
-    }
-
-    public int getNoWarnThresholds() {
-        return noWarnThresholds;
-    }
-
-    public int getNoFailThresholds() {
-        return noFailThresholds;
-    }
-
-    public boolean getResult() {
-        return result;
-    }
-
-    public int getNoAnalysedClasses() {
-        return noAnalysedClasses;
-    }
-
-    public Map<String, Integer> getClasses() {
-        return classes;
-    }
-
-    // helper functions
+    /**
+     * Recompute the summary statistics based on the current class DIT values and
+     * thresholds.
+     * 
+     * @param warnThreshold the threshold for warning
+     * @param failThreshold the threshold for failure
+     */
     private void recomputeSummary(int warnThreshold, int failThreshold) {
         // early catch for unnecessary calculations
         if (classes.isEmpty()) {
@@ -133,6 +119,35 @@ public class DitResult implements Result {
         this.noFailThresholds = fails;
         this.result = fails == 0;
         this.noAnalysedClasses = classSize;
+    }
+
+    // getters
+    public int getMaxDIT() {
+        return maxDIT;
+    }
+
+    public double getMeanDIT() {
+        return meanDIT;
+    }
+
+    public int getNoWarnThresholds() {
+        return noWarnThresholds;
+    }
+
+    public int getNoFailThresholds() {
+        return noFailThresholds;
+    }
+
+    public boolean getResult() {
+        return result;
+    }
+
+    public int getNoAnalysedClasses() {
+        return noAnalysedClasses;
+    }
+
+    public Map<String, Integer> getClasses() {
+        return classes;
     }
 
 }
