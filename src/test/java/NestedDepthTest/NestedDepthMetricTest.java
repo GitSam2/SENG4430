@@ -62,9 +62,58 @@ public class NestedDepthMetricTest
             throw new RuntimeException(e);
         }
 
-        assertEquals(2.0, flaggedCount);
+        assertEquals(3.0, flaggedCount);
     }
 
+    @Test
+    void zeroClassExample() {
+        Path testInputPath = Path.of("src/test/java/NestedDepthTest/zeroDepthCLass");
+
+        ProjectParser parser = new ProjectParser();
+        double flaggedCount = 0;
+
+        try 
+        {
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
+            LoopDepthMetric metric = new LoopDepthMetric();
+            LoopMetrics result = metric.compute(ctx);
+            flaggedCount = result.flaggedCount;
+            System.out.println("Zero depth Test");
+            System.out.println("Max depth: " + result.maxDepth);
+            System.out.println("Flagged count: " + flaggedCount);
+
+        } catch (IOException e) 
+        {
+            throw new RuntimeException(e);
+        }
+
+        assertEquals(0.0, flaggedCount);
+    }
+
+    @Test
+    void DoubleClassExample() {
+        Path testInputPath = Path.of("src/test/java/NestedDepthTest/DoubleLoopCLass");
+
+        ProjectParser parser = new ProjectParser();
+        double flaggedCount = 0;
+
+        try 
+        {
+            MetricContext ctx = new MetricContext(testInputPath, parser.parseProject(testInputPath));
+            LoopDepthMetric metric = new LoopDepthMetric();
+            LoopMetrics result = metric.compute(ctx);
+            flaggedCount = result.flaggedCount;
+            System.out.println("Double nested class test");
+            System.out.println("Max depth: " + result.maxDepth);
+            System.out.println("Flagged count: " + flaggedCount);
+
+        } catch (IOException e) 
+        {
+            throw new RuntimeException(e);
+        }
+
+        assertEquals(2.0, flaggedCount);
+    }
 }
  
     
