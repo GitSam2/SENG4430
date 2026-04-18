@@ -1,10 +1,8 @@
 package org.example;
 
-import java.util.List;
-
-import org.example.picocli.MetricCommand;
 import org.example.picocli.ParentCommand;
 import org.example.services.MetricContext;
+import org.example.services.MetricFactory;
 
 import picocli.CommandLine;
 
@@ -13,8 +11,8 @@ public class QualityToolApp {
 
     public static void main(String[] args) {
         CommandLine cmd = new CommandLine(new ParentCommand());
-        for (String name : List.of("dit", "cc", "dep", "id", "nested-depth", "wmc")) {
-            cmd.addSubcommand(name, new MetricCommand(name));
+        for (var entry : MetricFactory.all()) {
+            cmd.addSubcommand(entry.name(), entry.command());
         }
         System.exit(cmd.setExecutionStrategy(new CommandLine.RunAll()).execute(args));
     }

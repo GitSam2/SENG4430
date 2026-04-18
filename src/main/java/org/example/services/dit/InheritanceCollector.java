@@ -27,7 +27,7 @@ public final class InheritanceCollector
             String parent = decl.getExtendedTypes(0).getNameAsString();
             inheritanceMap.put(className, parent);
         } else {
-            // implicit Object
+            // if no parent, then we assume it is at the root "Object"
             inheritanceMap.put(className, "Object");
         }
     }
