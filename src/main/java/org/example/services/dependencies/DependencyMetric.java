@@ -84,10 +84,6 @@ public class DependencyMetric implements Metric<DependencyResult> {
      * @throws IOException
      * @throws InterruptedException
      */
-    private List<NodeResult> nodeVisitor(DependencyNode node, boolean isDirectDependency)
-            throws IOException, InterruptedException {
-        return nodeVisitor(node, isDirectDependency, new ArrayList<NodeResult>());
-    }
 
     /**
      * Recursively visits each node in the dependency tree, fetching CVE information for each dependency and its children. This method is called for each node in the tree, starting with the root nodes (direct dependencies) and then visiting their children (transitive dependencies).
@@ -98,12 +94,13 @@ public class DependencyMetric implements Metric<DependencyResult> {
      * @throws IOException
      * @throws InterruptedException
      */
-    private List<NodeResult> nodeVisitor(DependencyNode node, boolean isDirectDependency, List<NodeResult> results)
+    private List<NodeResult> nodeVisitor(DependencyNode node, boolean isDirectDependency)
             throws IOException, InterruptedException {
         CveService cveService = new CveService();
+        List<NodeResult> results = new ArrayList<>();
 
         if (visitedDependencies.contains(node.getArtifact().getArtifactId() + ":" + node.getArtifact().getVersion())) {
-            return results;
+            return results; // skip already visited dependencies to avoid infinite loops in case of cyclic dependencies
         }
         totalDependencies++;
         visitedDependencies.add(node.getArtifact().getArtifactId() + ":" + node.getArtifact().getVersion());
@@ -122,7 +119,7 @@ public class DependencyMetric implements Metric<DependencyResult> {
 
         for (DependencyNode child : node.getChildren()) {
             // Visit children of node
-            results.addAll(nodeVisitor(child, false, results));
+            results.addAll(nodeVisitor(child, false));
         }
 
         fetchedDependencies++;
