@@ -19,6 +19,10 @@ public class DependencyMetric implements Metric<DependencyResult> {
     public volatile boolean bootstrapping = false;
     public volatile boolean resolving = false;
     public volatile boolean fetchingCves = false;
+    private volatile DependencyTreeResolver resolver = null;
+    private volatile int totalDependencies = 0;
+    private volatile int fetchedDependencies = 0;
+    private volatile ArrayList<String> visitedDependencies = new ArrayList<>();
 
     @Override
     public String id() {
@@ -56,6 +60,7 @@ public class DependencyMetric implements Metric<DependencyResult> {
             result = future.get();
         } catch (InterruptedException | ExecutionException e) {
             Console.error("An error occurred while computing the dependency metric.");
+            return null;
         }
 
         // TODO: move description somewhere else, this is just for testing
@@ -71,17 +76,45 @@ public class DependencyMetric implements Metric<DependencyResult> {
         return result;
     }
 
+    /**
+     * Recursively visits each node in the dependency tree, fetching CVE information for each dependency and its children. This method is called for each node in the tree, starting with the root nodes (direct dependencies) and then visiting their children (transitive dependencies).
+     * @param node
+     * @param isDirectDependency
+     * @return A list of NodeResult objects containing information about each dependency, including whether it is a direct dependency, whether it has associated CVEs, the severity of those CVEs, and any fixed versions available.
+     * @throws IOException
+     * @throws InterruptedException
+     */
     private List<NodeResult> nodeVisitor(DependencyNode node, boolean isDirectDependency)
             throws IOException, InterruptedException {
+        return nodeVisitor(node, isDirectDependency, new ArrayList<NodeResult>());
+    }
+
+    /**
+     * Recursively visits each node in the dependency tree, fetching CVE information for each dependency and its children. This method is called for each node in the tree, starting with the root nodes (direct dependencies) and then visiting their children (transitive dependencies).
+     * @param node
+     * @param isDirectDependency
+     * @param results A list to accumulate the results as the tree is traversed. This allows us to return a single list of NodeResult objects at the end of the traversal.
+     * @return A list of NodeResult objects containing information about each dependency, including whether it is a direct dependency, whether it has associated CVEs, the severity of those CVEs, and any fixed versions available.
+     * @throws IOException
+     * @throws InterruptedException
+     */
+    private List<NodeResult> nodeVisitor(DependencyNode node, boolean isDirectDependency, List<NodeResult> results)
+            throws IOException, InterruptedException {
         CveService cveService = new CveService();
-        List<NodeResult> results = new ArrayList<>();
+
+        if (visitedDependencies.contains(node.getArtifact().getArtifactId() + ":" + node.getArtifact().getVersion())) {
+            return results;
+        }
+        totalDependencies++;
+        visitedDependencies.add(node.getArtifact().getArtifactId() + ":" + node.getArtifact().getVersion());
+
 
         List<CveInfo> cveInfos = cveService.fetchCves(new DependencyModel(node.getArtifact().getArtifactId(),
                 node.getArtifact().getGroupId(), node.getArtifact().getVersion()));
 
         boolean hasCve = !cveInfos.isEmpty();
         String fixedVersion = fixedVersion(cveInfos);
-        double severity = severity(cveInfos);
+        double severity = getMaxSeverity(cveInfos);
 
         NodeResult result = new NodeResult(node.getArtifact().getArtifactId() + ":" + node.getArtifact().getVersion(),
                 isDirectDependency, hasCve, severity, fixedVersion);
@@ -89,9 +122,10 @@ public class DependencyMetric implements Metric<DependencyResult> {
 
         for (DependencyNode child : node.getChildren()) {
             // Visit children of node
-            results.addAll(nodeVisitor(child, false));
+            results.addAll(nodeVisitor(child, false, results));
         }
 
+        fetchedDependencies++;
         return results;
     }
 
@@ -113,7 +147,10 @@ public class DependencyMetric implements Metric<DependencyResult> {
         return v2v.compareTo(v1v);
     }
 
-    private double severity(List<CveInfo> cveInfos) {
+    /**
+     * Returns the maximum CVSS score from the list of CVE information. This represents the severity of the most severe vulnerability associated with the dependency.
+     */
+    private double getMaxSeverity(List<CveInfo> cveInfos) {
         double maxSeverity = 0.0;
         for (CveInfo info : cveInfos) {
             if (info.cvsScore() > maxSeverity) {
@@ -123,6 +160,11 @@ public class DependencyMetric implements Metric<DependencyResult> {
         return maxSeverity;
     }
 
+    /**
+     * Computes the dependency metric result. This method is run in a background thread to allow for status updates on the main thread.
+     * @param ctx The metric context containing information about the project and environment.
+     * @return The computed dependency result.
+     */
     private DependencyResult computeResult(MetricContext ctx) {
         bootstrapping = true;
         // Bootstrap the repo
@@ -131,7 +173,7 @@ public class DependencyMetric implements Metric<DependencyResult> {
 
         resolving = true;
         // Resolve the dependency tree
-        DependencyTreeResolver resolver = new DependencyTreeResolver(repositorySystem, repositorySystemSession);
+        resolver = new DependencyTreeResolver(repositorySystem, repositorySystemSession);
         Path projectPath = ctx.getProjectPath();
 
         Path pomPath = projectPath.resolve("pom.xml");
@@ -140,18 +182,17 @@ public class DependencyMetric implements Metric<DependencyResult> {
             return null;
         }
 
-        fetchingCves = true;
-
-        // Fetch CVE information for dependencies
         List<DependencyTree> trees = null;
         try {
             trees = resolver.resolvePom(pomPath.toString());
         } catch (Exception e) {
-            e.printStackTrace();
             Console.error("Project did not contain a pom.xml file or it could not be resolved");
             return null;
         }
 
+        fetchingCves = true;
+
+        // Fetch CVE information for dependencies
         List<NodeResult> nodeResults = new ArrayList<>();
         for (DependencyTree tree : trees) {
             try {
@@ -168,9 +209,13 @@ public class DependencyMetric implements Metric<DependencyResult> {
         return result;
     }
 
+    /**
+     * Returns the current status of the dependency metric computation for display in the TUI. This is used to provide feedback to the user about what stage of the computation is currently happening.
+     * @return The current status message.
+     */
     private String getStatus() {
-        if (fetchingCves)       return "Fetching CVE information for dependencies...";
-        if (resolving)          return "Resolving dependency tree...";
+        if (fetchingCves)       return "Fetching CVE information for dependencies" + (fetchedDependencies > 0 ? " (" + fetchedDependencies + "/" + totalDependencies + ")" : "") + "...";
+        if (resolving)          return "Resolving dependency tree" + (resolver != null ? " (" + resolver.resolvedModules + "/" + resolver.totalModules + ")" : "") + "...";
         if (bootstrapping)      return "Bootstrapping maven...";
         
         return "Starting...";
