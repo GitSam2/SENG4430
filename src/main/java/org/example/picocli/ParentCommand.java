@@ -44,7 +44,7 @@ public class ParentCommand implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         // This method will be called when QualityToolApp() is executed
-        Console.init(spec, noColor);
+        Console.init(spec, !noColor);
 
         CommandLine commandLine = spec.commandLine();
         // If no subcommand is provided, display usage and exit with error code
