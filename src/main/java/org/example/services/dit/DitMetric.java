@@ -25,7 +25,7 @@ public final class DitMetric implements Metric<DitResult> {
         InheritanceCollector collector = new InheritanceCollector(); // visitor pattern
                                                                      // https://refactoring.guru/design-patterns/visitor
         for (CompilationUnit cu : ctx.compilationUnits()) {
-            cu.accept(collector, inheritanceMap); // visits each class and puts name and parent in inheritance map
+            cu.accept(collector, inheritanceMap); // visits each node and puts name and parent in inheritance map
         }
 
         // compute DIT per class
