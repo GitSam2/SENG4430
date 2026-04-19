@@ -67,7 +67,7 @@ public class NestedDepthMetricTest
 
     @Test
     void zeroClassExample() {
-        Path testInputPath = Path.of("src/test/java/NestedDepthTest/zeroDepthCLass");
+        Path testInputPath = Path.of("src/test/java/NestedDepthTest/zeroDepthClass");
 
         ProjectParser parser = new ProjectParser();
         double flaggedCount = 0;
@@ -92,7 +92,7 @@ public class NestedDepthMetricTest
 
     @Test
     void DoubleClassExample() {
-        Path testInputPath = Path.of("src/test/java/NestedDepthTest/DoubleLoopCLass");
+        Path testInputPath = Path.of("src/test/java/NestedDepthTest/DoubleLoopClass");
 
         ProjectParser parser = new ProjectParser();
         double flaggedCount = 0;
