@@ -14,16 +14,16 @@ import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 public final class InheritanceCollector
         extends VoidVisitorAdapter<Map<String, String>> {
 
-    @Override
+    @Override // we only override the visit method for ClassOrInterfaceDeclaration as we only
+              // care about classes and interfaces
     public void visit(ClassOrInterfaceDeclaration decl, Map<String, String> inheritanceMap) {
-        // perform actual visit using cu visit method
+        // this is needed for nested/inner classes within a single file to be discovered
         super.visit(decl, inheritanceMap);
 
         // get details of the visit for the inheritance map
         String className = decl.getNameAsString();
 
-        if (decl.getExtendedTypes().isNonEmpty()) {
-            // Java only allows one superclass
+        if (decl.getExtendedTypes().isNonEmpty()) { // checks if there is a parent class
             String parent = decl.getExtendedTypes(0).getNameAsString();
             inheritanceMap.put(className, parent);
         } else {
