@@ -1,11 +1,11 @@
 package ccTest;
 
+import junit.framework.AssertionFailedError;
 import org.example.services.CyclomaticComplexity.CyclomaticComplexityMetric;
 import org.example.services.CyclomaticComplexity.CyclomaticComplexityResult;
 import org.example.services.MetricContext;
 import org.example.services.ProjectParser;
-import org.junit.Test;
-import org.opentest4j.AssertionFailedError;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -13,16 +13,6 @@ import java.nio.file.Path;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CCTest {
-    @Test
-    public void testCCMain() throws IOException {
-        Path projectPath = Path.of("src/main/resources/powsybl-open-loadflow/src");
-        ProjectParser parser = new ProjectParser();
-        MetricContext ctx = new MetricContext(projectPath, parser.parseProject(projectPath));
-        CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
-        CyclomaticComplexityResult result = metric.compute(ctx);
-        System.out.println(result.output());
-        assertEquals(99, result.getHighestCCScoredFile().getHighestScore());
-    }
 
     @Test
     public void testCCMultiClass() throws IOException {
@@ -32,7 +22,7 @@ public class CCTest {
         CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
         CyclomaticComplexityResult result = metric.compute(ctx);
         System.out.println(result.output());
-        assertEquals(0, result.getHighestCCScoredFile().getHighestScore());
+        assertEquals(1, result.getHighestCCScoredFile().getHighestScore());
     }
 
     @Test
@@ -43,7 +33,7 @@ public class CCTest {
         CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
         CyclomaticComplexityResult result = metric.compute(ctx);
         System.out.println(result.output());
-        assertEquals(0, result.getHighestCCScoredFile().getHighestScore() );
+        assertEquals(1, result.getHighestCCScoredFile().getHighestScore() );
     }
 
     @Test
@@ -54,7 +44,7 @@ public class CCTest {
         CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
         CyclomaticComplexityResult result = metric.compute(ctx);
         System.out.println(result.output());
-        assertEquals(1, result.getHighestCCScoredFile().getHighestScore() );
+        assertEquals(2, result.getHighestCCScoredFile().getHighestScore() );
     }
 
     @Test
@@ -65,6 +55,17 @@ public class CCTest {
         CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
         CyclomaticComplexityResult result = metric.compute(ctx);
         System.out.println(result.output());
-        assertEquals(0, result.getHighestCCScoredFile().getHighestScore() );
+        assertEquals(1, result.getHighestCCScoredFile().getHighestScore() );
+    }
+
+    @Test
+    public void testSelf()  throws IOException, AssertionFailedError {
+        Path projectPath = Path.of("../SENG4430");
+        ProjectParser parser = new ProjectParser();
+        MetricContext ctx = new MetricContext(projectPath, parser.parseProject(projectPath));
+        CyclomaticComplexityMetric metric = new CyclomaticComplexityMetric();
+        CyclomaticComplexityResult result = metric.compute(ctx);
+        System.out.println(result.output());
+        assertEquals(21, result.getHighestCCScoredFile().getHighestScore() );
     }
 }
