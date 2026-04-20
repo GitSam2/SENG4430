@@ -44,10 +44,8 @@ public class CyclomaticComplexityMetric implements Metric<CyclomaticComplexityRe
                     highestScore = atomicInteger.get();
                     highestScoreString = method.getNameAsString();
                 }
-
                 averageScore += atomicInteger.get();
             }
-
             averageScore /= list.size();
 
             if (highestScore >= warning && highestScore < severe) {
@@ -63,11 +61,9 @@ public class CyclomaticComplexityMetric implements Metric<CyclomaticComplexityRe
                     highestScoreString,
                     severity
             );
-
             cyclomaticComplexityList.add(unitResult);
 
         });
-
         return new CyclomaticComplexityResult(cyclomaticComplexityList);
     }
 
