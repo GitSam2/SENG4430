@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.2.0](https://github.com/GitSam2/SENG4430/compare/v1.1.0...v1.2.0) (2026-04-20)
+
+
+### Features
+
+* add bash and batch scripts to launch qualitytool ([8da076f](https://github.com/GitSam2/SENG4430/commit/8da076f71fa3dae0a9491546a70a62ab424566d8))
+* add dependency module resolving, parent resolving and counting will throbbing ([c5a1bc2](https://github.com/GitSam2/SENG4430/commit/c5a1bc264eb4bf403f65a799efca261836ae3a96))
+* made metricCommand a callable int so error codes propagate upwards ([439083f](https://github.com/GitSam2/SENG4430/commit/439083ffd0bfc084b7c9252e6234c4675f57315e))
+* refactored commands ([fafd392](https://github.com/GitSam2/SENG4430/commit/fafd3922910c69bbedabac0cf029ae8e45f88493))
+* refactored commands ([d23b8de](https://github.com/GitSam2/SENG4430/commit/d23b8de37206787ca815f46d948b9dfededd15ba))
+
+
+### Bug Fixes
+
+* added caching to DIT algorithm for improved mem management ([ceb50fd](https://github.com/GitSam2/SENG4430/commit/ceb50fd10c390f00a5b25544f932594bebb66f89))
+* added caching to DIT algorithm for improved mem management ([70629f7](https://github.com/GitSam2/SENG4430/commit/70629f73c3e4f2f6b1a142ad0652e99998eb8352))
+* adjusted factory implementation to support easy modification of … ([f7a48fb](https://github.com/GitSam2/SENG4430/commit/f7a48fb479f0283c902ba4aba724fb443508e480))
+* adjusted factory implementation to support easy modification of parameters ([5305a88](https://github.com/GitSam2/SENG4430/commit/5305a88f5d9b62064dfab09ca4668a74a77dd003))
+* adjusted output to use table ([3077f8f](https://github.com/GitSam2/SENG4430/commit/3077f8fffc3891636773094c2604d61c195fa859))
+* adjusted table ([3e65782](https://github.com/GitSam2/SENG4430/commit/3e657826ca96e2f5f80bdf28c42c5d343f9b72b5))
+* adjusted table that was hidding class names when running the dit metric ([e517827](https://github.com/GitSam2/SENG4430/commit/e5178271ef1d10c3b018b5e1ff4fafa36956b0fd))
+* fix no-colour flag working opposite ([07ad597](https://github.com/GitSam2/SENG4430/commit/07ad59740fb3419bbdc6e1974456ba37da66d0b4))
+* fixed logic error that caused geometric usage of memory ([7508ba0](https://github.com/GitSam2/SENG4430/commit/7508ba09651cfdb16f28f5ba767697c6e032ef45))
+* improved comments ([a6fe928](https://github.com/GitSam2/SENG4430/commit/a6fe928841ed8da585007d59f538dce85836a3a5))
+* improved comments ([f8addef](https://github.com/GitSam2/SENG4430/commit/f8addeff485cb27aab35ea36abae8e782bb2a3b6))
+* refactoring regressed the throbber functionality. Added a temporary description section to dependency ([a3525f5](https://github.com/GitSam2/SENG4430/commit/a3525f5320a0d2f1ee1afa3102b8a06e594b810c))
+* tests had small warnings and errors that stopped compilation ([d31920b](https://github.com/GitSam2/SENG4430/commit/d31920b8567825d1f97ae29f06520d1f19762bdd))
+* used record for better practice ([d1750ee](https://github.com/GitSam2/SENG4430/commit/d1750ee469f98fd143ec4d58fe692994150005ec))
+* used record for better practice ([3eea30e](https://github.com/GitSam2/SENG4430/commit/3eea30e89a9e81624cb2b32caa28f951d393918b))
+
 ## [1.1.0](https://github.com/GitSam2/SENG4430/compare/v1.0.0...v1.1.0) (2026-03-26)
 
 
