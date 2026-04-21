@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class SelfTest {
     @Test
     public void testSelf() throws IOException, AssertionFailedError {
-        Path projectPath = Path.of("../SENG4430/tree/main/src/main/java/org/example");
+        Path projectPath = Path.of("src/main/java");
         ProjectParser parser = new ProjectParser();
         MetricContext ctx = new MetricContext(projectPath, parser.parseProject(projectPath));
         // CC test
@@ -48,7 +48,7 @@ public class SelfTest {
         IdLengthResult idResult = idMetric.compute(ctx);
         maxIdentifierLength = idResult.getMaxIdentifierLength();
         System.out.println(idResult.output());
-        assertEquals(1, maxIdentifierLength);
+        assertEquals(26, maxIdentifierLength);
 
         // Nested-depth
         double flaggedCount = 0;
@@ -56,7 +56,7 @@ public class SelfTest {
         LoopMetrics NDResult = NDMetric.compute(ctx);
         flaggedCount = NDResult.flaggedCount;
         System.out.println("Flagged count: " + flaggedCount);
-        assertEquals(1.0, flaggedCount);
+        assertEquals(0.0, flaggedCount);
 
         // WMC test
         WmcMetric wmcMetric = new WmcMetric();
