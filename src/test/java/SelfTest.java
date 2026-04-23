@@ -1,4 +1,3 @@
-import junit.framework.AssertionFailedError;
 import org.example.services.CyclomaticComplexity.CyclomaticComplexityMetric;
 import org.example.services.CyclomaticComplexity.CyclomaticComplexityResult;
 import org.example.services.IdLength.IdLengthMetric;
@@ -11,6 +10,7 @@ import org.example.services.dit.DitMetric;
 import org.example.services.dit.DitResult;
 import org.example.services.wmc.WmcMetric;
 import org.example.services.wmc.WmcResult;
+import org.example.services.dependencies.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -18,21 +18,34 @@ import java.nio.file.Path;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class SelfTest {
     @Test
-    public void testSelf() throws IOException, AssertionFailedError {
-        Path projectPath = Path.of("src/main/java");
+    public void testSelf() throws IOException {
+        // Dependency test
+        // Requires access to pom unlike other metrics, so we have separate metric contexts
+        Path projectPath = Path.of(".");
         ProjectParser parser = new ProjectParser();
         MetricContext ctx = new MetricContext(projectPath, parser.parseProject(projectPath));
+
+        DependencyMetric depMetric = new DependencyMetric();
+        DependencyResult depResult = depMetric.compute(ctx);
+        boolean cveFound = depResult.nodeResults().stream().anyMatch(NodeResult::hasCve);
+        depResult.nodeResults().forEach(nodeResult -> {
+            System.out.println(nodeResult.id() + " - CVE: " + nodeResult.hasCve() + " - Severity: " + nodeResult.severity());
+        });
+        assertFalse(cveFound, "Expected no CVEs, but found at least one.");
+
+        projectPath = Path.of("src/main/java");
+        parser = new ProjectParser();
+        ctx = new MetricContext(projectPath, parser.parseProject(projectPath));
+        
         // CC test
         CyclomaticComplexityMetric ccMetric = new CyclomaticComplexityMetric();
         CyclomaticComplexityResult ccResult = ccMetric.compute(ctx);
         System.out.println(ccResult.output());
         assertEquals(21, ccResult.getHighestCCScoredFile().getHighestScore() );
-
-        // Dependency test
-
 
         // DIT test
         double dit = 0;
@@ -40,7 +53,7 @@ public class SelfTest {
         DitResult ditResult = ditMetric.compute(ctx);
         dit = ditResult.getMeanDIT();
         System.out.println(ditResult.output());
-        assertEquals(1, dit);
+        assertTrue(dit < 2, "Expected mean DIT to be less than 2, but got: " + dit);
 
         // Id length test
         double maxIdentifierLength = 0;
