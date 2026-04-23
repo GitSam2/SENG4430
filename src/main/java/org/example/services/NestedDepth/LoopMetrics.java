@@ -70,7 +70,14 @@ public class LoopMetrics implements Result {
         else
         {
             Console.success("No flagged Loops");
-            return "Number of files checked: " + LoopDepthMetric.fileCount;
+            StringBuilder sb = new StringBuilder();
+            sb.append(String.format(Console.divider('-')));
+            sb.append(String.format("\nNumber of files checked: " + LoopDepthMetric.fileCount + "\n"));
+            sb.append(String.format("Number of flagged files: " + flaggedCount + "\n"));
+            sb.append(String.format("Total number of loops: " + loopCount + "\n"));
+            sb.append(String.format("Max loop depth: " + maxDepth + "\n"));
+            sb.append(String.format("Average loop depth: " + average() + "\n"));
+            return sb.toString();
         }
 
     }
