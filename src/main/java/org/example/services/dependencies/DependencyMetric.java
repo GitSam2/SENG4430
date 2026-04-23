@@ -80,15 +80,6 @@ public class DependencyMetric implements Metric<DependencyResult> {
      * Recursively visits each node in the dependency tree, fetching CVE information for each dependency and its children. This method is called for each node in the tree, starting with the root nodes (direct dependencies) and then visiting their children (transitive dependencies).
      * @param node
      * @param isDirectDependency
-     * @return A list of NodeResult objects containing information about each dependency, including whether it is a direct dependency, whether it has associated CVEs, the severity of those CVEs, and any fixed versions available.
-     * @throws IOException
-     * @throws InterruptedException
-     */
-
-    /**
-     * Recursively visits each node in the dependency tree, fetching CVE information for each dependency and its children. This method is called for each node in the tree, starting with the root nodes (direct dependencies) and then visiting their children (transitive dependencies).
-     * @param node
-     * @param isDirectDependency
      * @param results A list to accumulate the results as the tree is traversed. This allows us to return a single list of NodeResult objects at the end of the traversal.
      * @return A list of NodeResult objects containing information about each dependency, including whether it is a direct dependency, whether it has associated CVEs, the severity of those CVEs, and any fixed versions available.
      * @throws IOException

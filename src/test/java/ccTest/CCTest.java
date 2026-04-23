@@ -1,6 +1,5 @@
 package ccTest;
 
-import junit.framework.AssertionFailedError;
 import org.example.services.CyclomaticComplexity.CyclomaticComplexityMetric;
 import org.example.services.CyclomaticComplexity.CyclomaticComplexityResult;
 import org.example.services.MetricContext;
@@ -26,7 +25,7 @@ public class CCTest {
     }
 
     @Test
-    public void testCCSingleclass() throws IOException, AssertionFailedError {
+    public void testCCSingleclass() throws IOException {
         Path projectPath = Path.of("src/test/java/ccTest/singleClassExample");
         ProjectParser parser = new ProjectParser();
         MetricContext ctx = new MetricContext(projectPath, parser.parseProject(projectPath));
@@ -37,7 +36,7 @@ public class CCTest {
     }
 
     @Test
-    public void testCCSingleton() throws IOException, AssertionFailedError {
+    public void testCCSingleton() throws IOException {
         Path projectPath = Path.of("src/test/java/ccTest/singleton");
         ProjectParser parser = new ProjectParser();
         MetricContext ctx = new MetricContext(projectPath, parser.parseProject(projectPath));
@@ -48,7 +47,7 @@ public class CCTest {
     }
 
     @Test
-    public void testCCStatic() throws IOException, AssertionFailedError {
+    public void testCCStatic() throws IOException {
         Path projectPath = Path.of("src/test/java/ccTest/staticClass");
         ProjectParser parser = new ProjectParser();
         MetricContext ctx = new MetricContext(projectPath, parser.parseProject(projectPath));
@@ -59,7 +58,7 @@ public class CCTest {
     }
 
     @Test
-    public void testSelf()  throws IOException, AssertionFailedError {
+    public void testSelf()  throws IOException {
         Path projectPath = Path.of("../SENG4430");
         ProjectParser parser = new ProjectParser();
         MetricContext ctx = new MetricContext(projectPath, parser.parseProject(projectPath));
