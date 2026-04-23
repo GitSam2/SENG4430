@@ -68,13 +68,15 @@ public class SelfTest {
         LoopDepthMetric NDMetric = new LoopDepthMetric();
         LoopMetrics NDResult = NDMetric.compute(ctx);
         flaggedCount = NDResult.flaggedCount;
+        System.out.println("Nested Loops That Exceed A Depth Of 3 Are Considered A Code Smell And Are Flagged");
+        System.out.println(NDResult.output());
         System.out.println("Flagged count: " + flaggedCount);
         assertEquals(0.0, flaggedCount);
 
         // WMC test
         WmcMetric wmcMetric = new WmcMetric();
         WmcResult wmcResult = wmcMetric.compute(ctx);
-        System.out.println(wmcResult.output());
+        System.out.println("\n" + wmcResult.output());
         assertTrue(wmcResult.getMeanWMC() >= 0);
     }
 }
