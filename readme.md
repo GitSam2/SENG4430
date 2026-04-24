@@ -2,6 +2,15 @@
 ## Description
 The system is designed to measure static java code quality against selected metrics.
 
+## Contributors
+Usernames and student details:
+- mackenzieroddenby, c3376042: Mackenzie Roddenby (c3376042)
+- nmthaiss: Jimmy Nguyen (c3440776)
+- Troyki: Troy Madden (c3469643)
+- praveennagahage-bit: Praveen Randika Appuhami Nagahage (c346712)
+- JamesTolputt: James Tolputt (c3329780)
+- GitSam2: Samuel Woodhouse (c3406005)
+
 ## Prerequisites
 - Maven (mvn)
 - Java 25 SDK
