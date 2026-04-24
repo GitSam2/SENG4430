@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/GitSam2/SENG4430/compare/v1.2.0...v1.3.0) (2026-04-24)
+
+
+### Features
+
+* add dependency to self test. Fix pom to not include dependency … ([6b17d45](https://github.com/GitSam2/SENG4430/commit/6b17d45d08eb03ef2fd59b452afc1a8047e32458))
+* add dependency to self test. Fix pom to not include dependency with potential CVE, testng, removed outdated references to JUnit 4, passed self test ([d480a03](https://github.com/GitSam2/SENG4430/commit/d480a038a984565cbe0167634cc35b7e37e46ef3))
+
 ## [1.2.0](https://github.com/GitSam2/SENG4430/compare/v1.1.0...v1.2.0) (2026-04-20)
 
 
